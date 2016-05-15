@@ -180,12 +180,12 @@ void SDL_BlitSurface(SDL_Surface* s, SDL_Rect * src, SDL_Surface* d, SDL_Rect * 
 
 		if(src) {
 			if(dst) 
-				sf2d_draw_texture_part_scale(s->texture, dst->x*scalepos+40*offset,dst->y, src->x, src->y, src->w, src->h, scalewidth,1);
+				sf2d_draw_texture_part_scale(s->texture, (int)(dst->x*scalepos+40*offset),dst->y, src->x, src->y, src->w, src->h, scalewidth,1);
 			else
 				sf2d_draw_texture_part_scale(s->texture, 40*offset,0, src->x, src->y, src->w, src->h, scalewidth,1);
 		} else {
 			if(dst) 
-				sf2d_draw_texture_scale(s->texture, dst->x*scalepos+40*offset,dst->y, scalewidth,1);
+				sf2d_draw_texture_scale(s->texture, (int)(dst->x*scalepos+40*offset),dst->y, scalewidth,1);
 			else
 				sf2d_draw_texture_scale(s->texture, 40*offset,0, scalewidth,1);
 		}
