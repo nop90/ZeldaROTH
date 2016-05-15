@@ -133,7 +133,6 @@ void Audio::replayMusic() {
 }
 
 FMUSIC_MODULE* Audio::choixMusique(int id) {
-	
     switch (id) {
         case 1 : return FMUSIC_LoadSong("romfs:/music/Foret.raw");
         case 2 : return FMUSIC_LoadSong("romfs:/music/Plaine.raw");

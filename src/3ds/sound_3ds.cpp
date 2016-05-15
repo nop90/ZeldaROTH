@@ -89,24 +89,6 @@ void loadSFX(FMUSIC_MODULE* s, const char* filename, u32 format)
 	s->format=format;
 }
 
-/*
-FSOUND_SAMPLE* createSFX(const char* filename, u32 format)
-{
-	int i;
-	for(i=0;i<NUMSFX;i++)
-	{
-		if(!SFX[i].used)
-		{
-			loadSFX(&SFX[i], filename, SOUND_FORMAT_16BIT);
-
-			if(!SFX[i].data)return NULL;
-			return &SFX[i];
-		}
-	}
-	return NULL;
-}
-*/
-
 int FSOUND_GetSFXMasterVolume()
 {
 	return SFXMasterVolume;
@@ -149,7 +131,7 @@ void FMUSIC_PlaySong(FMUSIC_MODULE* s)
 	if(!s || !s->used || !s->data || !soundEnabled)return;
 	flag = s->format;
 	if(s->loop) flag |= SOUND_REPEAT;
-	csndPlaySound(15, flag, frequency, 1.0, 0.0, (u32*)s->data, (u32*)s->data, s->size);
+	csndPlaySound(15, flag, 8000, 1.0, 0.0, (u32*)s->data, (u32*)s->data, s->size);
 }
 
 
@@ -163,6 +145,8 @@ FSOUND_SAMPLE* FSOUND_Sample_Load(int flag, const char * f,int a, int b, int c)
 			loadSFX(&SFX[i], f, SOUND_FORMAT_16BIT);
 
 			if(!SFX[i].data)return NULL;
+			SFX[i].used = true;
+			SFX[i].loop=false;
 			return &SFX[i];
 		}
 	}
@@ -180,8 +164,6 @@ FMUSIC_MODULE* FMUSIC_LoadSong(const char * f)
 			loadSFX(&SFX[i], f, SOUND_FORMAT_16BIT);
 			
 			if(!SFX[i].data) return NULL;
-			SFX[i].size = size;
-			SFX[i].format = SOUND_FORMAT_16BIT;
 			SFX[i].used = true;
 			SFX[i].loop=false;
 			return &SFX[i];
@@ -220,9 +202,9 @@ void FSOUND_Sample_Free(FSOUND_SAMPLE* s)
 	if(s) {
 		if (s->data)
 			linearFree(s->data);
-			s->size=0;
-			s->used=false;
-			s->loop=false;
+		s->size=0;
+		s->used=false;
+		s->loop=false;
 	}
 }
 
@@ -232,9 +214,9 @@ void FMUSIC_FreeSong(FMUSIC_MODULE* s)
 	if(s) {
 		if (s->data)
 			linearFree(s->data);
-			s->size=0;
-			s->used=false;
-			s->loop=false;
+		s->size=0;
+		s->used=false;
+		s->loop=false;
 	}
 }
 

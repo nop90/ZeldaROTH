@@ -6,7 +6,7 @@
 //#include "os_3ds.h"
 
 #define FSOUND_FREE 1
-#define NUMSFX (32)
+#define NUMSFX (45)
 
 typedef struct FSOUND_SAMPLE
 {
@@ -20,8 +20,6 @@ typedef struct FSOUND_SAMPLE
 
 typedef FSOUND_SAMPLE FMUSIC_MODULE;
 
-//#define FMUSIC_MODULE FSOUND_SAMPLE
-
 int FSOUND_Init(u32 freq, u32 bpd, u32 unkn);
 
 int FSOUND_GetSFXMasterVolume(); //
@@ -34,8 +32,6 @@ void FSOUND_SetSFXMasterVolume(u8 previous_volson);
 
 void initSFX(FSOUND_SAMPLE* s);
 void loadSFX(FSOUND_SAMPLE* s, const char* filename, u32 format);
-//FSOUND_SAMPLE* createSFX(const char* filename, u32 format);
-
 
 void FSOUND_PlaySound(int chl,FSOUND_SAMPLE* s);
 void FMUSIC_StopSong(FMUSIC_MODULE* s);
