@@ -20,6 +20,9 @@ typedef struct FSOUND_SAMPLE
 
 typedef FSOUND_SAMPLE FMUSIC_MODULE;
 
+void soundInit();
+void soundClose();
+
 int FSOUND_Init(u32 freq, u32 bpd, u32 unkn);
 
 int FSOUND_GetSFXMasterVolume(); //

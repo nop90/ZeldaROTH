@@ -157,6 +157,13 @@ int main(int argc, char** argv) {
 				break;
             default : 
 				gpGenerique->drawBackground((SDL_Surface*) 2);
+//				char buf[100];
+//				sprintf(buf,"FPS: %3.2f",sf2d_get_fps());
+//				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 16);
+//				sprintf(buf,"Mem: %d",mappableSpaceFree());
+//				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 36);
+//				sprintf(buf,"Lin: %d",linearSpaceFree());
+//				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 56);
 				gpJeu->drawMenu((SDL_Surface*) 2);
 				break;
         }

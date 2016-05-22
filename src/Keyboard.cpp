@@ -75,14 +75,13 @@ int Keyboard::getMode() {return mode;}
 void Keyboard::setMode(int i) {mode=i;}
 
 int Keyboard::gererClavier() {
- int exitval = 0;
 	int ev = SDL_PollEvent(&event);
-	if(ev & SDL_QUIT) exitval = -1;
+	if(ev & SDL_QUIT) return -1;
 	if(ev & SDL_KEYDOWN) {
 		keys = SDL_GetKeyState(NULL);
-		pollKeys(keys);
+		if(pollKeys(keys)==-1) return -1;
     }
-    return exitval;
+    return 0;
 }
 
 void Keyboard::toggleFullScreen() {
@@ -528,7 +527,7 @@ int Keyboard::pollKeys(int keys) {
             if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && tmp == 0) {
                 if (ligneVal==0) {
                     mode = 0;
-                    gpJeu->init(ligne+1);
+                    gpJeu->reinit(ligne+1);
                 }
                 if (ligneVal==1) {
                     mode = 9; ligneVal=1;
@@ -589,7 +588,7 @@ int Keyboard::pollKeys(int keys) {
             if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && tmp == 0) {
                 if (gpJeu->getText()) gpJeu->setText(gpJeu->getTexte()->suite());
                 if (!gpJeu->getText()) {
-                    mode = 0; gpJeu->init(ligne+1);
+                    mode = 0; gpJeu->reinit(ligne+1);
                     gpJeu->ecrit(236);
                 }
                 tmp = 1;

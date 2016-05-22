@@ -67,6 +67,35 @@ void Jeu::init(int save) {
     if (isDonjon()) ecrit(206+zone-12);
 }
 
+void Jeu::reinit(int save) {
+    zone=21;
+    delete gpProjectile;
+    gpProjectile = new Projectile(this, 0, N, 0, 0, 0);
+	delete gpObjet;
+    gpObjet = new Objet(this, 0, 0, 0, 0);
+    delete gpSnipe;
+	gpSnipe = new Snipe(this, 0, 0, 0, 0, 0);
+    delete gpCaisse;
+	gpCaisse = new Caisse(this, 0, 0, 0);
+    delete gpEnnemi;
+	gpEnnemi = new Ennemi(this, 0, 0, 0, true);
+    delete gpPiege;
+	gpPiege = new Ennemi(this, 0, 0, 0, true);
+    delete gpPnj;
+	gpPnj = new Pnj(this, 0, 0, 0, 0);
+    delete gpJoueur;
+	gpJoueur = new Joueur(this, save);
+    delete gpMonde;
+	gpMonde = new Monde(this);
+    delete gpMenu;
+	gpMenu = new Menu(this);
+    //gpTexte = new Texte(this);
+    delete gpStatut;
+	gpStatut = new Statut(this);
+    gpAudio->playMusic(zone);
+    if (isDonjon()) ecrit(206+zone-12);
+}
+
 void Jeu::setKeyboard(Keyboard* kb) {
     gpKeyboard = kb;
 }

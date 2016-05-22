@@ -3,6 +3,7 @@
 #include <sf2d.h>
 #include <sfil.h>
 #include "os_3ds.h"
+#include "sound_3ds.h"
 
 #define TICKS_PER_MSEC (268123.480)
 
@@ -18,6 +19,8 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 	
 	romfsInit();
 	cfguInit();
+	soundInit();
+
 	// Read the language field from the config savegame.
 	CFGU_GetSystemLanguage(&language);
 	
@@ -31,6 +34,7 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 
 void SDL_Quit()
 {
+	soundClose();
 	cfguExit();
     romfsExit();
 	sf2d_fini();

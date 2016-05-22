@@ -16,6 +16,36 @@ int MasterVolume = 255;
 int frequency=0;
 int channel;
 
+void soundInit()
+{
+	int i;
+	for(i=0;i<NUMSFX;i++)
+	{
+		SFX[i].used=false;
+	}
+
+	if(csndInit()==0)soundEnabled=true;
+	else soundEnabled=false;
+}
+
+void soundClose()
+{
+	int i;
+	for(i=0;i<NUMSFX;i++)
+	{
+		if(SFX[i].used)
+		{
+			if(SFX[i].data)
+			{
+				linearFree(SFX[i].data);
+				SFX[i].data=NULL;
+			}
+			SFX[i].used=false;
+		}
+	}
+	if(soundEnabled)csndExit();
+}
+
 FILE* openFile(const char* fn, const char* mode)
 {
 	if(!fn || !mode)return NULL;
@@ -56,15 +86,6 @@ int FSOUND_Init(u32 freq, u32 bps, u32 unkn)
 {
 
 	frequency = freq;
-	
-	int i;
-	for(i=0;i<NUMSFX;i++)
-	{
-		SFX[i].used=false;
-	}
-
-	if(csndInit()==0)soundEnabled=true;
-	else soundEnabled=false;
 	
 	return soundEnabled;
 }
@@ -174,20 +195,7 @@ FMUSIC_MODULE* FMUSIC_LoadSong(const char * f)
 
 void FSOUND_Close()
 {
-	int i;
-	for(i=0;i<NUMSFX;i++)
-	{
-		if(SFX[i].used)
-		{
-			if(SFX[i].data)
-			{
-				linearFree(SFX[i].data);
-				SFX[i].data=NULL;
-			}
-			SFX[i].used=false;
-		}
-	}
-	if(soundEnabled)csndExit();
+	return;
 }
 
 
