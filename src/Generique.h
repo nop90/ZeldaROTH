@@ -47,6 +47,7 @@ class Generique {
         void drawIntro(SDL_Surface* gpScreen, int etape);
         void drawDebut(SDL_Surface* gpScreen);
 		void drawBackground(SDL_Surface* gpScreen);
+        void drawFlag(SDL_Surface* gpScreen, int flagID);
     private :
         void cadre(int x, int y, int w, int h);
         Jeu* gpJeu;
@@ -63,6 +64,7 @@ class Generique {
 		SDL_Surface* imageBackground;
         SDL_Surface* imageNuit;
         SDL_Surface* imageIntro[5];
+        SDL_Surface* imageFlags;
         int anim;
         Uint32 lastAnimTime;
 };

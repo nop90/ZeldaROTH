@@ -11,6 +11,8 @@
 #ifndef __LISTABLE_H__
 #define __LISTABLE_H__
 
+#include "Common.h"
+
 class Listable {
     public :
         Listable();

@@ -41,7 +41,7 @@ class Ennemi : public Personnage {
         void permute(int val);
         bool isBoss();
     private :
-        void init();
+       void init();
         void IA();
         void bouge();
         void attend();

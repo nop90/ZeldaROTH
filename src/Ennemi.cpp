@@ -43,6 +43,7 @@ special1(0), special2(0), persistent(p) {
 
 Ennemi::~Ennemi() {
     if (!chargeIm) image = NULL;
+
     delete zonesAttaques;
     delete zonesVulnerables;
 }

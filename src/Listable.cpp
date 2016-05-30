@@ -9,12 +9,15 @@
 */
 
 #include "Listable.h"
+#include "3ds/gfx_3ds.h" //cancellare
+
 
 Listable::Listable() : suivant(0), id(0) {
 }
 
 Listable::~Listable() {
-    delete suivant;
+	if(suivant) delete suivant;
+	suivant = 0;
 }
 
 int Listable::size() {

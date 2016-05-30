@@ -24,7 +24,7 @@
 Keyboard::Keyboard(Jeu* jeu, Carte* carte, Encyclopedie* encycl, SDL_Surface* screen, int m) : 
     gpJeu(jeu), gpCarte(carte), gpEncyclopedie(encycl), mode(m), gFullScreen(1), 
     gpScreen(screen), tmp(0), tmpx(0), tmpc(0), tmpw(0), tmpt(0), tmpp(0), tmpm(0),
-    ligne(0), colonne(0), ligneOption(2), volume(32), volson(32), ligneRecord(3), 
+    ligne(0), colonne(0), ligneOption(3), volume(64), volson(64), ligneRecord(3), 
     colonneRecord(0), temps(0), ligneVal(0), intro(0) {
     for (int i = 0; i < 3; i++) save[i]=0;
     for (int i = 0; i < 3; i++) rang[i]=0;
@@ -35,24 +35,31 @@ Keyboard::Keyboard(Jeu* jeu, Carte* carte, Encyclopedie* encycl, SDL_Surface* sc
 
 void Keyboard::saveP() {
 
+	int languageID = getLanguage();
     ofstream f("sdmc:/3ds/ZeldaROTH/system.dat",ios::out | ios::binary);
     f.write((char *)&volume,sizeof(int));
     f.write((char *)&volson,sizeof(int));
     f.write((char *)&temps,sizeof(int));
     for (int i = 0; i < 3; i++) f.write((char *)&rang[i],sizeof(int));
+    f.write((char *)&languageID,sizeof(int));
     f.close();
 
 }
 
 void Keyboard::loadP() {
 
+	int languageID = 0;
     ifstream f("sdmc:/3ds/ZeldaROTH/system.dat",ios::in | ios::binary);
     if(!f.is_open()) return;
     f.read((char *)&volume,sizeof(int));
     f.read((char *)&volson,sizeof(int));
     f.read((char *)&temps,sizeof(int));
     for (int i = 0; i < 3; i++) f.read((char *)&rang[i],sizeof(int));
-    f.close();
+    if(!f.eof()){ //for retro compatibility
+		 f.read((char *)&languageID,sizeof(int));
+		 setLanguage(languageID);  
+ 	}
+	f.close();
 
 }
 
@@ -462,7 +469,7 @@ int Keyboard::pollKeys(int keys) {
                     }
                 }
                 if (ligne == 3 && colonne == 0) {
-                    mode = 6; ligneOption=2;
+                    mode = 6; ligneOption=3;
                     gpJeu->getGenerique()->initOption();
                 }
                 if (ligne == 3 && colonne == 1) {
@@ -491,7 +498,7 @@ int Keyboard::pollKeys(int keys) {
                 && !(keys&SDLK_LEFT) && !(keys&SDLK_RIGHT) && tmp) tmp=0;
             break;
         case 6 :
-            if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && tmp == 0 && ligneOption == 2) {
+            if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && tmp == 0 && ligneOption == 3) {
                 mode = 4;
                 gpJeu->getGenerique()->initSelection();
                 gpJeu->getAudio()->playSound(2);
@@ -500,25 +507,31 @@ int Keyboard::pollKeys(int keys) {
             }
             
             if ((keys&SDLK_UP) && !tmp) {
-                ligneOption--; if (ligneOption<0) ligneOption=2; tmp=1; 
+                ligneOption--; if (ligneOption<0) ligneOption=3; tmp=1; 
                 gpJeu->getAudio()->playSound(3);}
             if ((keys&SDLK_DOWN) && !tmp) {
-                ligneOption++; if (ligneOption>2) ligneOption=0; tmp=1;
+                ligneOption++; if (ligneOption>3) ligneOption=0; tmp=1;
                 gpJeu->getAudio()->playSound(3);}
             if ((keys&SDLK_LEFT) && !tmp) {
                 if (ligneOption == 0) {
-                    volume-=8; if (volume < 0) volume = 0; tmp=1;
+                    volume-=64; if (volume < 0) volume = 0; tmp=1;
                     gpJeu->getAudio()->setVolume(volume); gpJeu->getAudio()->playSound(3);}
                 if (ligneOption == 1) {
-                    volson-=8; if (volson < 0) volson = 0; tmp=1;
-                    gpJeu->getAudio()->setVolson(volson); gpJeu->getAudio()->playSound(3);}}
+                    volson-=64; if (volson < 0) volson = 0; tmp=1;
+                    gpJeu->getAudio()->setVolson(volson); gpJeu->getAudio()->playSound(3);}
+                if (ligneOption == 2) {
+                    setLanguage(getLanguage()-1);tmp=1;
+                    gpJeu->getAudio()->playSound(3);}}
             if ((keys&SDLK_RIGHT) && !tmp) {
                 if (ligneOption == 0) {
-                    volume+=8; if (volume > 64) volume = 64; tmp=1;
+                    volume+=64; if (volume > 64) volume = 64; tmp=1;
                     gpJeu->getAudio()->setVolume(volume);gpJeu->getAudio()->playSound(3);}
                 if (ligneOption == 1) {
-                    volson+=8; if (volson > 64) volson = 64; tmp=1;
-                    gpJeu->getAudio()->setVolson(volson);gpJeu->getAudio()->playSound(3);}}
+                    volson+=64; if (volson > 64) volson = 64; tmp=1;
+                    gpJeu->getAudio()->setVolson(volson);gpJeu->getAudio()->playSound(3);}
+                if (ligneOption == 2) {
+                    setLanguage(getLanguage()+1);tmp=1;
+                    gpJeu->getAudio()->playSound(3);}}
             
             if (!(keys&SDLK_RETURN) && !(keys&SDLK_UP) && !(keys&SDLK_DOWN) 
                 && !(keys&SDLK_LEFT) && !(keys&SDLK_RIGHT) && tmp) tmp=0;

@@ -84,39 +84,13 @@ int main(int argc, char** argv) {
             case 20 : //rang ultime
             case 21 : //rang de rapidité
             case 14 : //générique score
-//            case 17 : //menu d'aide 1
-//            case 18 : //menu d'aide 2
                 gpGenerique->drawTitre(gpScreen); break;
-//            case 4 : //selection
-//                gpGenerique->drawSelection(gpScreen, gpKeyboard->getLigne(),
-//                    gpKeyboard->getColonne()); break;
-//            case 6 : //options
-//                gpGenerique->drawOption(gpScreen, gpKeyboard->getLigneOption(),
-//                gpKeyboard->getVolume()/8, gpKeyboard->getVolson()/8); break;
-//            case 7 : //charger partie
-//                gpGenerique->drawCharger(gpScreen, gpKeyboard->getLigne(),
-//                    gpKeyboard->getLigneVal()); break;
             case 8 : //générique intro
                 gpGenerique->drawIntro(gpScreen, gpKeyboard->getIntro()); break;
-//            case 9 : //effacer partie
-//                gpGenerique->drawEffacerSave(gpScreen, gpKeyboard->getLigne(),
-//                    gpKeyboard->getLigneVal()); break;
             case 10 : //générique début chez link
                 gpGenerique->drawDebut(gpScreen); break;
             case 11 : //générique fin
                 gpGenerique->drawFin(gpScreen); break;
-//            case 12 : //carte
-//                gpCarte->draw(gpScreen); break;
-//            case 13 : //encyclopédie des monstres
-//                gpEncyclopedie->draw(gpScreen); break;
-//            case 15 : //records
-//            case 19 : //rang 100%
-//            case 20 : //rang ultime
-//            case 21 : //rang de rapidité
-//                gpGenerique->drawRecord(gpScreen, gpKeyboard->getLigneRecord(),
-//                    gpKeyboard->getColonneRecord()); break;
-//            case 16 : //effacer record
-//                gpGenerique->drawEffacer(gpScreen, gpKeyboard->getLigneVal()); break;
             default : break;
         }
 
@@ -126,7 +100,7 @@ int main(int argc, char** argv) {
                     gpKeyboard->getColonne()); break;
             case 6 : //options
                 gpGenerique->drawOption((SDL_Surface*) 2, gpKeyboard->getLigneOption(),
-                gpKeyboard->getVolume()/8, gpKeyboard->getVolson()/8); break;
+                gpKeyboard->getVolume()/4, gpKeyboard->getVolson()/4); break;
             case 7 : //charger partie
                 gpGenerique->drawCharger((SDL_Surface*) 2, gpKeyboard->getLigne(),
                     gpKeyboard->getLigneVal()); break;
@@ -157,13 +131,13 @@ int main(int argc, char** argv) {
 				break;
             default : 
 				gpGenerique->drawBackground((SDL_Surface*) 2);
-//				char buf[100];
-//				sprintf(buf,"FPS: %3.2f",sf2d_get_fps());
-//				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 16);
-//				sprintf(buf,"Mem: %d",mappableSpaceFree());
-//				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 36);
-//				sprintf(buf,"Lin: %d",linearSpaceFree());
-//				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 56);
+				char buf[100];
+				sprintf(buf,"FPS: %3.2f",sf2d_get_fps());
+				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 16);
+				sprintf(buf,"Mem: %d",mappableSpaceFree());
+				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 36);
+				sprintf(buf,"Lin: %d",linearSpaceFree());
+				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 56);
 				gpJeu->drawMenu((SDL_Surface*) 2);
 				break;
         }

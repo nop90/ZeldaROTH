@@ -10,7 +10,6 @@
 
 #include "Personnage.h"
 
-
 Personnage::Personnage() : Listable(), x(0), y(0), xdep(0), ydep(0), vie(1), 
 viemax(1), invincible(0), type(0), direction(S), h(0), w(0), anim(0), animmax(0) {
     image = NULL;
@@ -19,7 +18,8 @@ viemax(1), invincible(0), type(0), direction(S), h(0), w(0), anim(0), animmax(0)
 }
 
 Personnage::~Personnage() {
-    SDL_FreeSurface(image);
+    if(image) SDL_FreeSurface(image);
+	image=0;
     delete gpZoneBase;
 }
 

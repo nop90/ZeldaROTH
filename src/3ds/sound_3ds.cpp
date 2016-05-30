@@ -11,8 +11,8 @@ bool soundEnabled;
 
 FSOUND_SAMPLE SFX[NUMSFX];
 
-int SFXMasterVolume = 255;
-int MasterVolume = 255;
+int SFXMasterVolume = 64;
+int MasterVolume = 64;
 int frequency=0;
 int channel;
 
@@ -132,7 +132,7 @@ void FSOUND_SetSFXMasterVolume(u8 previous_volson)
 
 void FSOUND_PlaySound(int chl,FSOUND_SAMPLE* s)
 {
-	if(!s || !s->used || !s->data || !soundEnabled)return;
+	if(!s || !s->used || !s->data || !soundEnabled || SFXMasterVolume == 0)return;
 
 	channel++;
 	channel%=7;
@@ -149,7 +149,7 @@ void FMUSIC_StopSong(FMUSIC_MODULE* s)
 void FMUSIC_PlaySong(FMUSIC_MODULE* s)
 {
 	int flag;
-	if(!s || !s->used || !s->data || !soundEnabled)return;
+	if(!s || !s->used || !s->data || !soundEnabled || SFXMasterVolume == 0)return;
 	flag = s->format;
 	if(s->loop) flag |= SOUND_REPEAT;
 	csndPlaySound(15, flag, 8000, 1.0, 0.0, (u32*)s->data, (u32*)s->data, s->size);

@@ -39,6 +39,7 @@ Generique::Generique(Jeu* jeu) : gpJeu(jeu), anim(0) {
             dst.x = i; dst.y = j; SDL_BlitSurface(imageCadre, &src, imageBackground, &dst);
         }
 
+    imageFlags = IMG_Load("romfs:/images/logos/flags.png");
 }
 
 Generique::~Generique() {
@@ -55,6 +56,7 @@ Generique::~Generique() {
     SDL_FreeSurface(imageNuit);
     for (int i = 0; i < 5; i++) SDL_FreeSurface(imageIntro[i]);
     SDL_FreeSurface(imageBackground);
+    SDL_FreeSurface(imageFlags);
 }
 
 void Generique::drawFin(SDL_Surface* gpScreen) {
@@ -256,7 +258,8 @@ void Generique::initOption() {
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
     cadre(16,64,288,32);
-    cadre(16,128,288,32);
+    cadre(16,107,288,32);
+    cadre(16,150,288,32);
     cadre(16,192,136,32);
     
 switch(getLanguage()) {
@@ -264,35 +267,40 @@ switch(getLanguage()) {
 case 2: // French
     gpJeu->affiche(image, "OPTIONS", 40, 16);
     gpJeu->affiche(image, "MUSIQUE", 60, 72);
-    gpJeu->affiche(image, "SON", 60, 136);
+    gpJeu->affiche(image, "SON", 60, 115);
+    gpJeu->affiche(image, "LANGUE", 60, 158);
     gpJeu->affiche(image, "RETOUR", 63, 200);
 break;
 
 case 3: // German
     gpJeu->affiche(image, "OPTIONEN", 42, 16);
     gpJeu->affiche(image, "MUSIK", 60, 72);
-    gpJeu->affiche(image, "TON", 60, 136);
+    gpJeu->affiche(image, "TON", 60, 115);
+    gpJeu->affiche(image, "SPRACHE", 60, 158);
     gpJeu->affiche(image, "ZURÜCK", 60, 200);
 break;
 
 case 4: // Italian
     gpJeu->affiche(image, "OPZIONI", 40, 16);
     gpJeu->affiche(image, "MUSICA", 60, 72);
-    gpJeu->affiche(image, "SUONI", 60, 136);
+    gpJeu->affiche(image, "SUONI", 60, 115);
+    gpJeu->affiche(image, "LINGUA", 60, 158);
     gpJeu->affiche(image, "INDIETRO", 63, 200);
 break;
 
 case 5: // Spanish
    gpJeu->affiche(image, "OPCIONES", 40-1, 16);
     gpJeu->affiche(image, "MUSICA", 60, 72);
-    gpJeu->affiche(image, "SONIDOS", 60, 136);
+    gpJeu->affiche(image, "SONIDOS", 60, 115);
+    gpJeu->affiche(image, "IDIOMA", 60, 158);
     gpJeu->affiche(image, "ANTERIOR", 63-6, 200);
 break;
 
 default:
     gpJeu->affiche(image, "OPTIONS", 40, 16);
     gpJeu->affiche(image, "MUSIC", 60, 72);
-    gpJeu->affiche(image, "SOUNDS", 60, 136);
+    gpJeu->affiche(image, "SOUNDS", 60, 115);
+    gpJeu->affiche(image, "LANGUAGE", 60, 158);
     gpJeu->affiche(image, "RETURN", 63, 200);
 break;	
 }
@@ -306,13 +314,13 @@ break;
     src.x = 32; src.y = 96; dst.x = 264; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    src.x = 0; src.y = 96; dst.x = 128; dst.y = 136; 
+    src.x = 0; src.y = 96; dst.x = 128; dst.y = 115; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     for (int i = 144; i < 264; i+=16) {
-        src.x = 16; src.y = 96; dst.x = i; dst.y = 136; 
+        src.x = 16; src.y = 96; dst.x = i; dst.y = 115; 
         SDL_BlitSurface(imageCadre, &src, image, &dst);
     }
-    src.x = 32; src.y = 96; dst.x = 264; dst.y = 136; 
+    src.x = 32; src.y = 96; dst.x = 264; dst.y = 115; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
 }
 
@@ -1513,19 +1521,24 @@ void Generique::drawOption(SDL_Surface* gpScreen, int ligne, int opt1, int opt2)
     draw(gpScreen);
     SDL_Rect src;
     SDL_Rect dst;
+	
+	int languageID = getLanguage();
+	if (languageID<1 || languageID>5) languageID = 1;
     
     src.h = 21; src.w = 16;src.x = 0;src.y=0;
-    dst.x = 26; dst.y = 69+64*ligne;
+    dst.x = 26; dst.y = 69+43*ligne;
     
     SDL_BlitSurface(imageCurseur, &src, gpScreen, &dst);
     
     src.h = 16; src.w = 8;src.x = 0;src.y=0;
-    dst.x = 136+16*opt1; dst.y = 56+16;
+    dst.x = 136+8*opt1; dst.y = 56+16;
     SDL_BlitSurface(imageNiveau, &src, gpScreen, &dst);
                 
     src.h = 16; src.w = 8;src.x = 0;src.y=0;
-    dst.x = 136+16*opt2; dst.y = 56+16+64;
+    dst.x = 136+8*opt2; dst.y = 56+16+43;
     SDL_BlitSurface(imageNiveau, &src, gpScreen, &dst);
+	drawFlag(gpScreen, languageID);
+	
 }
 
 void Generique::drawRecord(SDL_Surface* gpScreen, int ligne, int colonne) {
@@ -1615,3 +1628,11 @@ void Generique::drawDebut(SDL_Surface* gpScreen) {
 void Generique::drawBackground(SDL_Surface* gpScreen) {
     SDL_BlitSurface(imageBackground, NULL, gpScreen, NULL);
 }
+
+void Generique::drawFlag(SDL_Surface* gpScreen, int flagID){
+    SDL_Rect src; src.x = (flagID-1)*26; src.y = 0;src.h = 16; src.w = 26;
+    SDL_Rect dst; dst.x = 193; dst.y = 158;
+    SDL_BlitSurface(imageFlags, &src, gpScreen, &dst);
+}
+
+

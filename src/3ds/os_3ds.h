@@ -51,6 +51,7 @@ int SDL_GetKeyState(void* p);
 void SDL_ShowCursor(int s);
 
 int getLanguage(void);
+void setLanguage(int languageID);
 
 
 #define SDLK_ESCAPE	KEY_SELECT

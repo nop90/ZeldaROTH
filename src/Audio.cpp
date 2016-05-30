@@ -41,10 +41,10 @@ Audio::~Audio() {
     }
 }
 
-void Audio::setVolume(int vol) {volume=vol*4;
+void Audio::setVolume(int vol) {volume=vol;
     if (previous_volume == -1) previous_volume = FMUSIC_GetMasterVolume(music);
     FMUSIC_SetMasterVolume(music, volume);}
-void Audio::setVolson(int volson) {FSOUND_SetSFXMasterVolume(volson*4);
+void Audio::setVolson(int volson) {FSOUND_SetSFXMasterVolume(volson);
    // for (int i = 0; i < 40; i++) Mix_VolumeChunk(sons[i], volson);
 }
 

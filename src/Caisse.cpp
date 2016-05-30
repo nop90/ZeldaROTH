@@ -12,7 +12,6 @@
 //#include <SDL/SDL_image.h>
 #include "3ds/os_3ds.h"
 
-
 #include "Menu.h"
 #include "Joueur.h"
 #include "Monde.h"
@@ -29,7 +28,18 @@ pousseX(0), pousseY(0), direction(N) {
     sy = ((type-1)/3)*h;
 }
 
-Caisse::~Caisse() {}
+Caisse::~Caisse() {
+	freeImages(); 
+}
+
+
+void Caisse::freeImages()
+{
+		if(suivant)	((Caisse*)suivant)->freeImages();
+		SDL_FreeSurface(image);
+		image = 0;
+}
+
 
 void Caisse::draw(SDL_Surface* gpScreen) {
     int phg[2];

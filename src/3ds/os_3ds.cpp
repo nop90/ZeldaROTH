@@ -76,3 +76,11 @@ int getLanguage(void)
 {
 	return language;
 }
+
+void setLanguage(int languageID)
+{
+	if (languageID>5) language = 1;
+	else if (languageID<1) language = 5;
+	else language = languageID;
+ 
+}
