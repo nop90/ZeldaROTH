@@ -42,8 +42,15 @@ special1(0), special2(0), persistent(p) {
 }
 
 Ennemi::~Ennemi() {
-    if (!chargeIm) image = NULL;
 
+    if (!chargeIm) image = NULL; 
+	if(suivant)	{
+		Ennemi* temp;
+		temp = (Ennemi*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
+	
     delete zonesAttaques;
     delete zonesVulnerables;
 }

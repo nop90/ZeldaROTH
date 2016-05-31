@@ -21,6 +21,13 @@ Personnage::~Personnage() {
     if(image) SDL_FreeSurface(image);
 	image=0;
     delete gpZoneBase;
+	if(suivant)	{
+		Personnage* temp;
+		temp = (Personnage*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
+
 }
 
 void Personnage::saveEmpl() {

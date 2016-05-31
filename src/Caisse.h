@@ -26,7 +26,6 @@ class Caisse : public Personnage {
         Caisse* getSuivant();
         bool pousse(Direction dir);
     private :
-		void freeImages();
         void bouge();
         
         Jeu* gpJeu;

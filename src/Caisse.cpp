@@ -29,17 +29,13 @@ pousseX(0), pousseY(0), direction(N) {
 }
 
 Caisse::~Caisse() {
-	freeImages(); 
+	if(suivant)	{
+		Caisse* temp;
+		temp = (Caisse*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
 }
-
-
-void Caisse::freeImages()
-{
-		if(suivant)	((Caisse*)suivant)->freeImages();
-		SDL_FreeSurface(image);
-		image = 0;
-}
-
 
 void Caisse::draw(SDL_Surface* gpScreen) {
     int phg[2];

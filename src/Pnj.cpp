@@ -29,7 +29,14 @@ id(type), message(msg), typePnj(P_SIMPLE), immo(false), typeIA(IA_RANDOM) {
     }
 }
 
-Pnj::~Pnj() {}
+Pnj::~Pnj() {
+	if(suivant)	{
+		Pnj* temp;
+		temp = (Pnj*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
+}
 
 void Pnj::draw(SDL_Surface* gpScreen) {
     if (id && vie) {
