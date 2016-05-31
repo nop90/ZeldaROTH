@@ -8,21 +8,6 @@ Credits
 The original game is made by Vincent Jouillat (http://www.zeldaroth.fr)
 This game uses the sf2d sftd and sfil libraries created by [USER=292975]@xerpi[/USER]
 
-Changelog
---------
-
-Ver. 0.2 alpha - Bugged test build (12 May 2016)
-- Game framerate fixed
-- Multilanguage implemented (EN, FR, IT, DE. ES). The language is selected according to the system language. Not supported languages switch by default to English
-- Italian translation strated (Only meu translated at the moment)
-- English translation updated (thanks to [USER=236924]@Ammako[/USER] for the fixed text)
-- All game keys mapped using keys combinations (mostly L+ ..)
-- Strerch to fullscreeen feature added
-- Menus and info screens moved to bottom screen
-
-Ver. 0.1 alpha (07 May 2016)
-- First alpha release
-
 Installation
 --------
 
