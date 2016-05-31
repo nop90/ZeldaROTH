@@ -39,6 +39,4 @@ Commands
 Known Bugs
 --------
 
-- Saving a game and loading it again sometimes crashes the app
-- Saving a game and restarting from logo screen causes a crash
-- Exit to launcher function doesn't work
+- In the CIA version closing the app from 3ds menu doesn't work
