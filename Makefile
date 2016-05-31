@@ -29,8 +29,8 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	ZeldaROTH
 BUILD		:=	build
-SOURCES		:=	src src/3ds src/fmmidi
-INCLUDES	:=	src src/3ds src/fmmidi
+SOURCES		:=	src src/3ds 
+INCLUDES	:=	src src/3ds 
 ROMFS       :=  data
 
 APP_TITLE		:= Zelda ROTH
