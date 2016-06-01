@@ -29,6 +29,10 @@ typedef struct{
   int w, h;
 } SDL_Rect;
 
+typedef struct{
+  int x, y;
+} SDL_Point;
+
 
 #define SDL_SRCCOLORKEY 1
 #define SDL_FULLSCREEN 1

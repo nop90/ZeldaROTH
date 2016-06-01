@@ -149,7 +149,7 @@ void FMUSIC_StopSong(FMUSIC_MODULE* s)
 void FMUSIC_PlaySong(FMUSIC_MODULE* s)
 {
 	int flag;
-	if(!s || !s->used || !s->data || !soundEnabled || SFXMasterVolume == 0)return;
+	if(!s || !s->used || !s->data || !soundEnabled || MasterVolume == 0)return;
 	flag = s->format;
 	if(s->loop) flag |= SOUND_REPEAT;
 	csndPlaySound(15, flag, 8000, 1.0, 0.0, (u32*)s->data, (u32*)s->data, s->size);

@@ -682,8 +682,8 @@ case 4: // Italian
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Apri la mappa: L e Y (fuori dai dungeon)", 24, ligne);
-    else gpJeu->affiche(image, "Apri la mappa: L e Y (nei dungeon)", 24, ligne);
+        gpJeu->affiche(image, "Apri la mappa: L e Y (fuori dai templi)", 24, ligne);
+    else gpJeu->affiche(image, "Apri la mappa: L e Y (nei templi)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
@@ -1052,9 +1052,38 @@ case 3: // German
     }
 break;
 
-//case 4: // Italian
-
-//break;
+case 4: // Italian
+    switch (i) {
+        case 0 :
+            cadre(88-2-16,96,144+4+32,48);
+            if (gpJeu->getKeyboard()->getRang(i)) 
+                gpJeu->affiche(image, "GRADO: Eroe di Hyrule", 96-2-16, 104);
+            else gpJeu->affiche(image, "GRADO: SCONOSCIUTO", 96-2-16, 104);
+            gpJeu->affiche(image, "100% del gioco completato", 96-2-16, 120);
+            break;
+        case 1 :
+            cadre(64-8-16,64,192+16+32,112);
+            int l; l=72;
+            if (gpJeu->getKeyboard()->getRang(i)) 
+                gpJeu->affiche(image, "GRADO: Campione", 72-8-16, l);
+            else gpJeu->affiche(image, "GRADO: SCONOSCIUTO", 72-8-16, l);
+            l+=16;
+            gpJeu->affiche(image, "Gioco completato senza morire,", 72-8-16, l);l+=16;
+            gpJeu->affiche(image, "con 10 cuori al completo,", 72-8-16, l);l+=16;
+            gpJeu->affiche(image, "senza parlare con le Grandi Fate,", 72-8-16, l);l+=16;
+            gpJeu->affiche(image, "senza comprare bottiglie", 72-8-16, l);l+=16;
+            gpJeu->affiche(image, "e senza uno schudo.", 72-8-16, l);l+=16;
+            break;
+        case 2 :
+            cadre(71-10,88,178+20,64);
+            if (gpJeu->getKeyboard()->getRang(i)) 
+                gpJeu->affiche(image, "GRADO: Maratoneta di Hyrule", 78-10, 96);
+            else gpJeu->affiche(image, "GRADO: SCONOSCIUTO", 78-10, 96);
+            gpJeu->affiche(image, "Gioco completato in meno di", 78-10, 112);
+            gpJeu->affiche(image, "due ore", 78-10, 128);
+            break;
+    }
+break;	
 
 case 5: // Spanish
     switch (i) {
@@ -1257,7 +1286,7 @@ case 3: // German
 break;
 
 case 4: // Italian
-    if (tmp==1) gpJeu->affiche(image, ("Morto " + oss.str() + " volta").c_str(), 10, 50);
+    if (tmp==1) gpJeu->affiche(image, ("Morto " + oss.str() + " volte").c_str(), 10, 50);
     else gpJeu->affiche(image, ("Morto " + oss.str() + " volte").c_str(), 10, 50);
 break;
 
@@ -1400,9 +1429,49 @@ case 3: // German
         gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
 break;
 
-//case 4: // Italian
-
-//break;
+case 4: // Italian
+    gpJeu->affiche(image, ("Oggetti: " + oss.str() + " / 56").c_str(), 10, 90);
+    
+    tmp=gpJoueur->nbEnnemis();
+    oss.str(""); oss << tmp; pctg+=tmp;
+    gpJeu->affiche(image, ("Tipi di nemici uccisi: " + oss.str() + " / 46").c_str(), 10, 110);
+    
+    pctg=(int)((pctg*100)/138);
+    oss.str(""); oss << pctg;
+    gpJeu->affiche(image, ("Hai raggiunto " + oss.str() + "% di completamento, congratulazioni!").c_str(), 
+        10, 130);
+    
+    gpJeu->affiche(image, "GRADO: ", 10, ligne);
+    
+    if (gpJoueur->getMort()==0 && gpJoueur->hasBouteille(0)==0
+        && gpJoueur->hasBouteille(1)==0 && gpJoueur->hasBouteille(2)==0
+        && gpJoueur->hasMedaillon(0)==0 && gpJoueur->hasMedaillon(1)==0
+        && gpJoueur->hasMedaillon(2)==0 && gpJoueur->getVieMax()==20
+        && gpJoueur->getMagieMax()==32 && gpJoueur->getBouclier()==0) {
+        result="Swanky"; gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;
+        gpJeu->getKeyboard()->setRang(1); gpJeu->getKeyboard()->saveP();}
+    else {
+        if (pctg==100) {result="Eroe di Hyrule"; 
+            gpJeu->getKeyboard()->setRang(0); gpJeu->getKeyboard()->saveP();}
+        if (pctg<100) result="Perfezionista";
+        if (pctg<95) result="Zelda Fan";
+        if (pctg<90) result="Giocatore professionista";
+        if (pctg<85) result="Esperto";
+        if (pctg<80) result="Novizio";
+        gpJeu->affiche(image, " - "+result, 52, ligne);
+        ligne+=20;
+    }
+    
+    if (gpJoueur->getMort()>=50) {
+        result="Morto vivente"; gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
+    else if (gpJoueur->getMort()>=20) {
+        result="Kamikaze"; gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
+        
+    if (temps<=7200) {
+        result="Maratoneta di Hyrule"; 
+        gpJeu->getKeyboard()->setRang(2); gpJeu->getKeyboard()->saveP();
+        gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
+break;
 
 case 5: // Spanish
     gpJeu->affiche(image, ("Objetos : " + oss.str() + " / 56").c_str(), 10, 90);
@@ -1453,7 +1522,7 @@ default:
     
     tmp=gpJoueur->nbEnnemis();
     oss.str(""); oss << tmp; pctg+=tmp;
-    gpJeu->affiche(image, ("Defeated all kinds of enemies: " + oss.str() + " / 46").c_str(), 10, 110);
+    gpJeu->affiche(image, ("Kinds of defeated enemies: " + oss.str() + " / 46").c_str(), 10, 110);
     
     pctg=(int)((pctg*100)/138);
     oss.str(""); oss << pctg;

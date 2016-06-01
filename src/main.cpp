@@ -116,12 +116,21 @@ int main(int argc, char** argv) {
             case 16 : //effacer record
                 gpGenerique->drawEffacer((SDL_Surface*) 2, gpKeyboard->getLigneVal()); break;
             case 12 : //carte
-                gpCarte->draw((SDL_Surface*) 2); break;
+                gpCarte->draw((SDL_Surface*) 2); 
+				if (gpJeu->getMenuPtr()->getVal() == 200) gpJeu->getMenuPtr()->menuOut(); 
+				gpJeu->drawMenu((SDL_Surface*) 2);
+				break;
             case 13 : //encyclopédie des monstres
-                gpEncyclopedie->draw((SDL_Surface*) 2); break;
+                gpEncyclopedie->draw((SDL_Surface*) 2); 
+				if (gpJeu->getMenuPtr()->getVal() == 200) gpJeu->getMenuPtr()->menuOut(); 
+				gpJeu->drawMenu((SDL_Surface*) 2);
+				break;
             case 17 : //menu d'aide 1
             case 18 : //menu d'aide 2
-                gpGenerique->draw((SDL_Surface*) 2); break;
+                gpGenerique->draw((SDL_Surface*) 2); 
+				if (gpJeu->getMenuPtr()->getVal() == 200) gpJeu->getMenuPtr()->menuOut(); 
+				gpJeu->drawMenu((SDL_Surface*) 2);
+				break;
             case 2 : //logo
             case 3 : //titre
             case 8 : //générique intro
@@ -131,15 +140,7 @@ int main(int argc, char** argv) {
 				break;
             default : 
 				gpGenerique->drawBackground((SDL_Surface*) 2);
-/* // Show memory allocation 
-				char buf[100];
-				sprintf(buf,"FPS: %3.2f",sf2d_get_fps());
-				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 16);
-				sprintf(buf,"Mem: %d",mappableSpaceFree());
-				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 36);
-				sprintf(buf,"Lin: %d",linearSpaceFree());
-				gpJeu->affiche((SDL_Surface*) 2, buf, 16, 56);
-*/
+				if (gpJeu->getMenuPtr()->getVal() == 0) gpJeu->getMenuPtr()->menuIn(); 
 				gpJeu->drawMenu((SDL_Surface*) 2);
 				break;
         }

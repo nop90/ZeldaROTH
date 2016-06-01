@@ -62,10 +62,22 @@ int SDL_PollEvent(int * event)
 	hidScanInput();
 	*event = hidKeysHeld();
 	if (event) ret= SDL_KEYDOWN;
+	if (*event & KEY_TOUCH) ret|= SDL_FINGERDOWN;
 	if(!aptMainLoop()) ret|= SDL_QUIT;
 	return ret;
 }
 
+int getTouchX(){
+	touchPosition pos;	
+	hidTouchRead(&pos);
+	return pos.px;
+}
+
+int getTouchY(){
+	touchPosition pos;	
+	hidTouchRead(&pos);
+	return pos.py;
+}
 
 int SDL_GetKeyState(void* p)
 {

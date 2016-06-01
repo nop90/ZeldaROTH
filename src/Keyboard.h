@@ -71,6 +71,7 @@ class Keyboard {
         SDL_Event event;
 //        Uint8* keys;
         int keys;
+		SDL_Point touchLocation;
         
 };
 

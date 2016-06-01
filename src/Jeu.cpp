@@ -157,10 +157,11 @@ int Jeu::nbEnnemis() {
 
 void Jeu::draw(SDL_Surface* screen) {
     
-    if (menu || gpMenu->getVal()) {
+//    if (menu || gpMenu->getVal()) {
+	if (menu) {
 		drawFreeze(screen);
 		return;
-	}
+	} 
 
     if (!transition) scrolling();
     
@@ -216,7 +217,12 @@ void Jeu::drawFreeze(SDL_Surface* screen) {
 }
 
 void Jeu::drawMenu(SDL_Surface* screen) {
-	if (menu || gpMenu->getVal()) gpMenu->draw(screen);
+//	if (menu || gpMenu->getVal()) 
+		gpMenu->draw(screen);
+}
+
+Menu* Jeu::getMenuPtr() {
+    return gpMenu;
 }
 
 Joueur* Jeu::getJoueur() {
@@ -1550,8 +1556,9 @@ int Jeu::enleve() {
 
 void Jeu::setMenu(bool b) {
     menu = b;
-    if (!menu) gpMenu->menuOut();
-    else {stop = true; gpMenu->menuIn();}
+	stop = menu;
+//    if (!menu) gpMenu->menuOut();
+//    else {stop = true; gpMenu->menuIn();}
 }
 
 void Jeu::ecrit(int id, bool anim, bool cadre, int x, int y, int w, int h) {

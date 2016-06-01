@@ -88,7 +88,14 @@ int Keyboard::gererClavier() {
 		keys = SDL_GetKeyState(NULL);
 		if(pollKeys(keys)==-1) return -1;
     }
-    return 0;
+	if(ev & SDL_FINGERDOWN) {
+		touchLocation.x = getTouchX();
+		touchLocation.y = getTouchY();
+	} else {
+		touchLocation.x = -1;
+		touchLocation.y = -1;
+	}
+	return 0;
 }
 
 void Keyboard::toggleFullScreen() {
@@ -307,7 +314,25 @@ int Keyboard::pollKeys(int keys) {
                 gpJoueur->dechargeSpin();
             }
             
-            
+            //touchscreeen object selection
+			
+			if (gpJeu->getMenu() || !gpJeu->getStop()) {
+				int sx=-1;
+				int sy=-1;
+				if (touchLocation.x>=32 && touchLocation.x<128) {
+					if (touchLocation.x>=96) sx=2;
+					else if (touchLocation.x>=64) sx=1;
+					else sx=0;
+				}
+				if (touchLocation.y>=32 && touchLocation.y<160) {
+					if (touchLocation.y>=128) sy=3;
+					else if (touchLocation.y>=96) sy=2;
+					else if (touchLocation.y>=64) sy=1;
+					else sy=0;
+				}
+				if (sx>-1 && sy>-1) gpJoueur->setObjet(sx+sy*3);
+			}
+			
             //curseur menu
             if (gpJeu->getMenu() && 
             (gpJoueur->getTypeAnim()<4 || gpJoueur->getTypeAnim()>20) && tmp==0) {
@@ -515,7 +540,9 @@ int Keyboard::pollKeys(int keys) {
             if ((keys&SDLK_LEFT) && !tmp) {
                 if (ligneOption == 0) {
                     volume-=64; if (volume < 0) volume = 0; tmp=1;
-                    gpJeu->getAudio()->setVolume(volume); gpJeu->getAudio()->playSound(3);}
+                    gpJeu->getAudio()->setVolume(volume); 
+					gpJeu->getAudio()->playSound(3);
+					if (volume==0) gpJeu->getAudio()->stopMusic();}
                 if (ligneOption == 1) {
                     volson-=64; if (volson < 0) volson = 0; tmp=1;
                     gpJeu->getAudio()->setVolson(volson); gpJeu->getAudio()->playSound(3);}
@@ -524,6 +551,7 @@ int Keyboard::pollKeys(int keys) {
                     gpJeu->getAudio()->playSound(3);}}
             if ((keys&SDLK_RIGHT) && !tmp) {
                 if (ligneOption == 0) {
+					if (volume==0) gpJeu->getAudio()->playMusic(47);
                     volume+=64; if (volume > 64) volume = 64; tmp=1;
                     gpJeu->getAudio()->setVolume(volume);gpJeu->getAudio()->playSound(3);}
                 if (ligneOption == 1) {
@@ -532,7 +560,7 @@ int Keyboard::pollKeys(int keys) {
                 if (ligneOption == 2) {
                     setLanguage(getLanguage()+1);tmp=1;
                     gpJeu->getAudio()->playSound(3);}}
-            
+
             if (!(keys&SDLK_RETURN) && !(keys&SDLK_UP) && !(keys&SDLK_DOWN) 
                 && !(keys&SDLK_LEFT) && !(keys&SDLK_RIGHT) && tmp) tmp=0;
             break;

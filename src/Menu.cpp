@@ -44,7 +44,7 @@ Menu::~Menu() {
 
 void Menu::draw(SDL_Surface* gpScreen) {
     
-    if (!gpJeu->getStop()) gpJeu->setStop(true);
+//    if (!gpJeu->getStop()) gpJeu->setStop(true);
     
     drawCadres(gpScreen);
     
@@ -63,7 +63,7 @@ void Menu::draw(SDL_Surface* gpScreen) {
     if(sens==1 && val<200)val+=25;
     if(sens==0 && val > 0) {
         val-=25;
-        if (val<=0) gpJeu->setStop(false);
+//        if (val<=0) gpJeu->setStop(false);
     }
 }
 

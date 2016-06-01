@@ -41,8 +41,11 @@ void SDL_WM_SetIcon(void* i, void* p);
 
 #define SDL_QUIT 1<<1
 #define SDL_KEYDOWN 1<<2
+#define SDL_FINGERDOWN 1<<3
 
 int SDL_PollEvent(int * event);
+int getTouchX();
+int getTouchY();
 
 int SDL_GetKeyState(void* p);
 
