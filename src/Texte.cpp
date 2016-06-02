@@ -662,22 +662,22 @@ case 4: // Italian
             os << tmp;
             texte = "Hai trovato una parte di cuore!!!";
             if (tmp<4) buffer = "te ne servono "+os.str()+" ancora per un nuvo cuore.";
-            else buffer = "Il tuo numero di cuori è aumentato!";
+            else buffer = "Il tuo numero di cuori e' aumentato!";
             break;
-        case 11 : texte = "N: Casa di Link*W: Terra di Hyrule*E: Tempio della foresta"; break;
+        case 11 : texte = "N: Casa di Link*O: Terra di Hyrule*E: Tempio della foresta"; break;
         case 12 : texte = "Tempio della montagna**Non per cardiopatici, paurosi o deboli di cuore."; break;
-        case 13 : texte = "W: Entrata del Deserto*N: Tempio della montagna"; break;
+        case 13 : texte = "O: Entrata del Deserto*N: Tempio della montagna"; break;
         case 14 : texte = "N: Tempio della montagna*S: Terra di Hyrule"; break;
         case 15 : texte = "N: Montagna della morte"; break;
         case 16 : texte = "E: Entrata della foresta"; break;
-        case 17 : texte = "S: Lago Hylia*E: Cimitero Infestato"; break;
+        case 17 : texte = "S: Lago Hylia*E: Cimitero infestato"; break;
         case 18 : texte = "S: Al villaggio Kakariko"; break;
         case 19 : texte = "N: Villaggio Kakariko"; break;
         case 20 : texte = "N: Terra di Hyrule"; break;
-        case 21 : texte = "W: Terra di Fuoco"; break;
+        case 21 : texte = "O: Terra di Fuoco"; break;
         case 22 : texte = "E: Villaggio Ombra*- Non per i vivi -"; break;
         case 23 : texte = "Tempio Oscuro**Se sei un fantasma e cerchi un lavoro, vieni a trovarci."; break;
-        case 24 : texte = "N: Villaggio Ombra*W: Lago Hylia"; break;
+        case 24 : texte = "N: Villaggio Ombra*O: Lago Hylia"; break;
         case 25 : texte = "N: Cimitero infestato**Non entrare"; break;
         case 26 : texte = "Villaggio Ombra"; break;
         case 27 : texte = "Vendo una bottiglia per 100 rupie, sei interessato?*              SI' ?            no  "; 
@@ -687,42 +687,42 @@ case 4: // Italian
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<100) idsuiv=29;
             else idsuiv=30;
             break;
-        case 28 : texte = "Vendo una bottiglia per 100 rupie, sei interessato?*              sì              NO ?"; idsuiv=31; break;
+        case 28 : texte = "Vendo una bottiglia per 100 rupie, sei interessato?*              si'             NO ?"; idsuiv=31; break;
         case 29 : texte = "Spiacente, non hai abbastanza rupie"; break;
         case 30 : texte = "Grazie, ecco la tua bottiglia."; break;
         case 31 : texte = "Torna ancora se cambi idea."; break;
         case 32 : texte = "Spiacente, era la mia unica bottiglia."; break;
-        case 33 : texte = "Hai trovato una bottiglia vuota!**Ti aiuterà a conservare le pozioni."; break;
+        case 33 : texte = "Hai trovato una bottiglia vuota!**Ti aiutera' a conservare le pozioni."; break;
         case 35 : texte = "Gli abitanti del villaggio hanno uno strano dialetto. Non capisco nulla..."; break;
         case 36 : texte = "@+@+@+@+@+@+@@@+*@=++=@=+@=+@=+=@*+@+@+@+=+="; break;
-        case 37 : texte = "Chiedi il permesso al capo se vuoi veramente passare!"; break;
+        case 37 : texte = "Chiedi il permesso al capo se vuoi passare!"; break;
         case 38 : texte = "Il capo ti ha concesso di passare? Grrrr... Allora vai!"; break;
         case 39 : texte = "Sparisci dalla mia vista!"; break;
         case 40 : texte = "Non abbiamo spesso visitatori da queste parti."; break;
         case 41 : texte = "I mostri locali temono poche cose. Fortunatamente attaccano solo gli umani."; break;
         case 42 : texte = "Davvero?*Capisci quello che sto dicendo?"; break;
         case 43 : texte = "N: Deserto e Villaggio Gerudo"; break;
-        case 44 : texte = "S: Lago Hylia*W: Castello di Hyrule"; break;
+        case 44 : texte = "S: Lago Hylia*O: Castello di Hyrule"; break;
         case 45 : texte = "Villaggio Kakariko"; break;
-        case 46 : texte = "W: Castello di Hyrule"; break;
+        case 46 : texte = "O: Castello di Hyrule"; break;
         case 47 : texte = "Che bella giornata!"; break;
-        case 48 : texte = "Perchè ho accettato di prendermi cura di quelle bestie?*Io odio le galline!"; break;
+        case 48 : texte = "Perche' ho accettato di prendermi cura di quelle bestie?*Io odio le galline!"; break;
         case 49 : texte = "Puoi trovare molte cose nel negozio del villaggio."; break;
-        case 50 : texte = "S: Villaggio Kakariko*W: Deserto*E: Montagna della Morte"; break;
+        case 50 : texte = "S: Villaggio Kakariko*O: Deserto*E: Montagna della Morte"; break;
         case 51 : texte = "Villagio Gerudo"; break;
         case 52 : texte = "Ti sei perso nel deserto?*Tu sei qui:*                        X"; break;
         case 54 : texte = "S: Al Castello di Hyrule"; break;
-        case 55 : texte = "Tempio del deserto**Vieni a provare le nostre terme.*(L'acqua non è potabile)"; break;
+        case 55 : texte = "Tempio del deserto**Vieni a provare le nostre terme.*(L'acqua non  e' potabile)"; break;
         case 56 : texte = "Tempio della foresta**Salva gli alberi, mangia un castoro!"; break;
         case 57 : texte = "Tempio del Lago**Cuffia da bagno obbligatoria"; break;
-        case 58 : texte = "Tempio di Ghiaccio**Il personale vi ricorda che un tempio non è una pista di pattinagio."; break;
+        case 58 : texte = "Tempio di Ghiaccio**Il personale vi ricorda che un tempio non e' una pista di pattinagio."; break;
         case 59 : texte = "Hai visto il fabbro del villaggio?*Si dice che sia molto abile nel migliorare l'equipaggiamento degli avventurieri. Molte persone gli fanno visita."; break;
-        case 60 : texte = "Il tempio è in pieno deserto, in una antica oasi."; break;
+        case 60 : texte = "Il tempio e' in pieno deserto, in una antica oasi."; break;
         case 61 : texte = "S: terra del fuoco*E: Villaggio Kakarico"; break;
         case 62 : texte = "Castello di Hyrule"; break;
         case 63 : texte = "E: Villaggio Kakariko"; break;
-        case 64 : texte = "W: Roccia della tartaruga*E: Lago Hylia"; break;
-        case 65 : texte = "Tempio segreto**Qui riposa la spada purificatrice, Excalibur.."; break;
+        case 64 : texte = "O: Roccia della tartaruga*E: Lago Hylia"; break;
+        case 65 : texte = "Tempio segreto**Qui riposa la spada purificatrice, La Spada Suprema.."; break;
         case 66 : texte = "N: Al cimitero infestato"; break;
         case 67 : texte = "Hai trovato la mappa del tempio!*Premi L e Y per vedere la mappa."; break;
         case 68 : texte = "Hai trovato la bussola!*Puoi localizzare i bauli e il Boss sulla mappa."; break;
@@ -733,7 +733,7 @@ case 4: // Italian
             texte = "Hai trovato un Cristallo Magico!"; 
             tmp = 7-gpJeu->getJoueur()->nbCristaux();
             os << tmp;
-            if (tmp==6 && !gpJeu->getJoueur()->getAvancement()) buffer = "A cosa potrà servire...?";
+            if (tmp==6 && !gpJeu->getJoueur()->getAvancement()) buffer = "A cosa potra' servire...?";
             else if (tmp>2) buffer = "Ce ne sono "+os.str()+" ancora da trovare!";
             else if (tmp==2) buffer = "Ne rimangono solo due da trovare!";
             else if (tmp==1) buffer = "Te ne manca uno solo!";
@@ -745,32 +745,32 @@ case 4: // Italian
         case 83 : texte = "Hai trovato un Martello Magico*Usalo per schiacciare gli ostacoli."; break;
         case 84 : texte = "Hai trovato la Bacchetta di Fuoco!*Da ora puoi lanciare potenti fiammate."; break;
         case 85 : texte = "Hai trovato la bacchetta di ghiaccio!*Usala per congelare ogni cosa a distanza."; break;
-        case 86 : texte = "Hai trovato la spada Excalibur!*Neanche Ganon può resistere al suo potere... in teoria!"; break;
-        case 87 : texte = "Grazie per avermi salvato, Link.***Cerchiamo in fretta Ganon; dobbiamo riprenderci la Triforce!"; break;
+        case 86 : texte = "Hai trovato la Spada Suprema!*Neanche Ganon puo' resistere al suo potere... in teoria!"; break;
+        case 87 : texte = "Grazie per avermi salvato, Link.***Cerchiamo in fretta Ganon; dobbiamo riprenderci la Triforza!"; break;
         case 89 : texte = "Il passaggio segreto dietro il trono conduce a Ganon. Affrettati!"; break;
         case 90 : texte = "Siamo molto vicini, seguimi!"; break;
-        case 91 : texte = "Temo tu non sia in grado di sconfiggere Ganon con le tue attuali armi...*Vai a parlare con il Capo del villaggio Kakariko Village, sono sicura che troverà una soluzione."; break;
-        case 92 : texte = "Ganon è proprio oltre quella porta. Ora curerò le tue ferite."; break;
-        case 93 : texte = "Ganon è ancora da qualche parte nel castello."; break;
+        case 91 : texte = "Temo tu non sia in grado di sconfiggere Ganon con le tue attuali armi...*Vai a parlare con il Capo del villaggio Kakariko, sono sicura che troverà una soluzione."; break;
+        case 92 : texte = "Ganon e' proprio oltre quella porta. Ora curo le tue ferite."; break;
+        case 93 : texte = "Ganon e' ancora da qualche parte nel castello."; break;
         case 94 : texte = "Dovresti aspettare la Principessa Zelda!"; break;
-        case 95 : texte = "Non ha la sensazione di star dimenticando qualcosa, ad ogni modo?"; break;
+        case 95 : texte = "Non hai la sensazione di star dimenticando qualcosa?"; break;
         case 96 : texte = "Zelda ti sta aspettando!"; break;
-        case 97 : texte = "Hai trovato la Triforce!"; break;
+        case 97 : texte = "Hai trovato la Triforza!"; break;
         case 98 : texte = "Hai trovato il libro di Mudora!**Ora puoi capire l'antico linguaggio di Hylian!"; break;
         case 99 : texte = "Congratulazioni per avermi trovato, Link. Come ricompensa ti dono il Pendente di Din. Aumenta la tua difesa di un punto."; break;
         case 100 : texte = "Congratulazioni per avermi trovato, Link. Come ricompensa ti dono il Pendente di Nayru. Aumenta la tua difesa di due punti."; break;
         case 101 : texte = "..."; break;
         case 102 : texte = "Hai ottenuto un pendente magico!**La tua difesa aumenta!"; break;
-        case 103 : texte = "Congratulazioni per avermi trovato, Link. Come ricompensa raddoppierò la capacità della tua carica di magia!"; break;
-        case 104 : texte = "La tua capacità di carica magica è raddoppiata!"; break;
-        case 105 : texte = "Torna quando avrai un abottiglia e ti venderà una pozione rossa che ripristina la tua salute."; break;
+        case 103 : texte = "Congratulazioni per avermi trovato, Link. Come ricompensa raddoppiero' la capacità della tua carica di magia!"; break;
+        case 104 : texte = "La tua capacità di carica magica e' raddoppiata!"; break;
+        case 105 : texte = "Torna quando avrai un  bottiglia e ti vendero' una pozione rossa che ripristina la tua salute."; break;
         case 106 : texte = "Una pozione rossa per 60 rupie. Sei interessato?*              SI' ?            no  "; 
             if (gpJeu->getJoueur()->hasBouteille(0)!=1
             && gpJeu->getJoueur()->hasBouteille(1)!=1
             && gpJeu->getJoueur()->hasBouteille(2)!=1) {id=105; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<60) idsuiv=29;
             else idsuiv=108; break;
-        case 107 : texte = "Una pozione rossa per 60 rupie. Sei interessato?*              sì               NO ?"; break;
+        case 107 : texte = "Una pozione rossa per 60 rupie. Sei interessato?*              si'              NO ?"; break;
         case 108 : texte = "Grazie, ecco la tua pozione.";break;
         case 109 : texte = "Hai ottenuto una pozione rossa!*Bevila per ripristinare la tua salute."; break;
         case 110 : texte = "Hai ottenuto una pozione verde!*Bevila per ripristinare la tua carica magica."; break;
@@ -782,83 +782,83 @@ case 4: // Italian
             == gpJeu->getJoueur()->getVieMax()) {id=128; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<10) idsuiv=29;
             else idsuiv=129; break;
-        case 115 : texte = "Un cuore per 10 rupie. Sei interessato?**              sì               NO ?"; break;
-        case 116 : texte = "A little bit of magic for 20 rupees. Are you interested?**              YES ?            no  "; 
+        case 115 : texte = "Un cuore per 10 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 116 : texte = "Un po' di magia per 20 rupie. Sei interessato?**              SI' ?            no  "; 
             if (gpJeu->getJoueur()->getMagie()+gpJeu->getJoueur()->getBoostMagie()
             == gpJeu->getJoueur()->getMagieMax() || !gpJeu->getJoueur()->hasObjet(O_LANTERNE)) {
                 id=128; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<20) idsuiv=29;
             else idsuiv=129; break;
-        case 117 : texte = "A little bit of magic for 20 rupees. Are you interested?**              yes              NO ?"; break;
-        case 118 : texte = "Some magic for 30 rupees. Are you interested?**              YES ?            no  "; 
+        case 117 : texte = "Un po' di magia per 20 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 118 : texte = "Un po' di magia per 30 rupie. Sei interessato?**              SI' ?            no  "; 
             if (gpJeu->getJoueur()->getMagie()+gpJeu->getJoueur()->getBoostMagie()
             == gpJeu->getJoueur()->getMagieMax() || !gpJeu->getJoueur()->hasObjet(O_LANTERNE)) {
                 id=128; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<30) idsuiv=29;
             else idsuiv=129; break;
-        case 119 : texte = "Some magic for 30 rupees. Are you interested?**              yes              NO ?"; break;
-        case 120 : texte = "5 arrows for 30 rupees. Are you interested?**              YES ?            no  "; 
+        case 119 : texte = "Un po' di magia per 30 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 120 : texte = "5 frecce per 30 rupie. Sei interessato?**              SI' ?            no  "; 
             if (gpJeu->getJoueur()->getFleche() == gpJeu->getJoueur()->getFlecheMax() 
             || !gpJeu->getJoueur()->hasObjet(O_ARC)) {id=128; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<30) idsuiv=29;
             else idsuiv=129; break;
-        case 121 : texte = "5 arrows for 30 rupees. Are you interested?**              yes              NO ?"; break;
-        case 122 : texte = "One bomb for 30 rupees. Are you interested?**              YES ?            no  "; 
+        case 121 : texte = "5 frecce per 30 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 122 : texte = "Una bomba per 30 rupie. Sei interessato?**              SI' ?            no  "; 
             if (gpJeu->getJoueur()->getBombe() == gpJeu->getJoueur()->getBombeMax() 
             || !gpJeu->getJoueur()->hasObjet(O_SAC_BOMBES)) {id=128; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<30) idsuiv=29;
             else idsuiv=129; break;
-        case 123 : texte = "One bomb for 30 rupees. Are you interested?**              yes              NO ?"; break;
-        case 124 : texte = "A bow for 1000 rupees. Are you interested?**              YES ?            no  "; 
+        case 123 : texte = "Una bomba per 30 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 124 : texte = "Un arco per 1000 rupie. Sei interessato?**              SI' ?            no  "; 
             idsuiv=29; break;
-        case 125 : texte = "A bow for 1000 rupees. Are you interested?**              yes              NO ?"; break;
-        case 126 : texte = "A bow for 50 rupees. Are you interested?**              YES ?            no  "; 
+        case 125 : texte = "Un arco per 1000 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 126 : texte = "Un arco per 50 rupie. Sei interessato?**              SI' ?            no  "; 
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<50) idsuiv=29;
             else idsuiv=129; break;
-        case 127 : texte = "A bow for 50 rupees. Are you interested?**              yes              NO ?"; break;
-        case 128 : texte = "You don't need this right now."; break;
-        case 129 : texte = "Thank you."; break;
-        case 130 : texte = "You got the bow!*Use it to shoot at distant targets."; break;
-        case 131 : texte = "Pick what you want."; break;
-        case 132 : texte = "What?*You are on a mission for the chief?*Okay, so I'm going to give you a discount on the bow"; break;
-        case 133 : texte = "Hello Link, I am the chief of this village. I suspected you were coming."; idsuiv=134; break;
-        case 134 : texte = "Since this morning, monsters stride along Hyrule. I tried to talk to Zelda about it, but as you've perhaps already seen, a powerful spell blocks the access to the castle."; idsuiv=136; break;
-        case 136 : texte = "You say Ganon is responsible for all of this? He stole the Triforce and he holds Princess Zelda captive?"; idsuiv=137; break;
-        case 137 : texte = "Mmmm... The situation is more serious than I thought..."; idsuiv=138; break;
-        case 138 : texte = "We have to act very quickly. You must face Ganon again!"; idsuiv=139; break;
-        case 139 : texte = "How do we enter the castle? I may have an idea..."; idsuiv=140; break;
-        case 140 : texte = "As you know, the power of the 7 wise men was locked up in 7 crystals by Aghanim when he was trying to open up the path to the Dark World, where Ganon was."; idsuiv=141; break;
-        case 141 : texte = "Yet, even if you raised the descendants of the 7 wise men from the dead after you defeated Ganon and found the Triforce, these crystals have kept their power."; idsuiv=142; break;
-        case 142 : texte = "They have been hidden deep in the 7 temples. Gather them all, and you'll be able to get over Ganon's spell."; idsuiv=143; break;
-        case 143 : texte = "That won't be easy, however. Ganon will surely send his best troops to protect these crystals."; idsuiv=144; break;
-        case 144 : texte = "One last thing. You won't go very far with your current equipment. Go and see the arms dealer and tell him that you're coming on my behalf. He will probably make a gesture for you."; break;
-        case 145 : texte = "Go and see the arms dealer and tell him that you're coming on my behalf. He will probably make a gesture for you."; break;
-        case 146 : texte = "You have to gather the 7 crystals to have a chance at saving Zelda and Hyrule."; break;
-        case 147 : texte = "You found the 7 crystals? Go to the castle! First, you have to save the princess. She will know better than I how to save Hyrule."; break;
-        case 148 : texte = "Your weapons are null and void against Ganon? You have to find the Master Sword. It is said to have been concealed in a hidden temple.*The way leading to the Sword of Evils Bane is said to cross over a village populated by monsters...*I wonder if such a village exists."; break;
-        case 150 : texte = "However, I'm afraid that your current equipment is inadequate for reaching this temple. You should go see the blacksmith of Gerudo village."; break;
-        case 151 : texte = "It's about time to face Ganon and take the Triforce back!"; break;
-        case 152 : texte = "Hey! You have to pay to open one of my chests!"; break;
-        case 153 : texte = "One of these chests contains a piece of heart. Do you want to try for 10 rupees?*You will only be allowed to open one chest, ok?               YES ?            no  "; 
+        case 127 : texte = "Un arco per 50 rupie. Sei interessato?**              si'              NO ?"; break;
+        case 128 : texte = "Non ne hai bisogno ora."; break;
+        case 129 : texte = "Grazie."; break;
+        case 130 : texte = "hai ottenuto un arco!*Usalo per colpire bersagli lontani."; break;
+        case 131 : texte = "Prendi cio' che vuoi."; break;
+        case 132 : texte = "Cosa?*Sei in missione per il capo?*Bene, allora ti faro' uno sconto sull'arco"; break;
+        case 133 : texte = "Salve Link, Sono il capo del villaggio. Sospettavo che stessi arrivando."; idsuiv=134; break;
+        case 134 : texte = "Da stamane i mostri si aggirano per Hyrule. Ho provato a parlarne a Zelda, ma come forse gia' sai, una potente magia blocca l'accesso al castello."; idsuiv=136; break;
+        case 136 : texte = "Dici che Ganon e' responsabile di tutto questo? Ha rubato la Triforza e tiene prigioniera Zelda?"; idsuiv=137; break;
+        case 137 : texte = "Mmmm... La situazione e' più seria di quanto pensassi..."; idsuiv=138; break;
+        case 138 : texte = "Dobbiamo agire velocemente. Devi affrontare Ganon di nuovo!"; idsuiv=139; break;
+        case 139 : texte = "Come entrare al castello? Penso di avere un'idea..."; idsuiv=140; break;
+        case 140 : texte = "Come sai il potere dei 7 saggi e' stato racchiuso in 7 cristalli da Aghanim quando stava provando ad aprire la via per il Mondo Oscuro, dove si trovava Ganon."; idsuiv=141; break;
+        case 141 : texte = "Anche se hai fatto risorgere dalla morte i discendenti dei 7 saggi quando hai sconfitto Ganon e trovato la Triforza, quei cristalli hanno mantenuto il loro potere."; idsuiv=142; break;
+        case 142 : texte = "Sono stati ben nascosti nei 7 templi. Radunali tutti e sarai in grado di superare la magia di Ganon."; idsuiv=143; break;
+        case 143 : texte = "Però non sara' facile. Ganon avra' sicuramente inviato le sue migliori truppe a proteggere quei cristalli."; idsuiv=144; break;
+        case 144 : texte = "Un ultima cosa. Non andrai lontano con il tuo attuale equipaggiamento. Vai ad incontrare l'armaiolo e digli che vieni per conto mio. vedrai che ti tratterà bene."; break;
+        case 145 : texte = "Vai ad incontrare l'armaiolo e digli che vieni per conto mio. vedrai che ti tratterà bene."; break;
+        case 146 : texte = "Devi radunare i 7 cristalli per avere una possibilita' di salvare Zelda e Hyrule."; break;
+        case 147 : texte = "Hai trovato i 7 cristalli? Vai al Castello! Per prima cosa salva la principessa. Lei sapra' meglio di me come salvare Hyrule."; break;
+        case 148 : texte = "Le tue armi sono inutili contro Ganon?Devi trovare la Spada Suprema. Si dice sia nascosta in un Tempio Segreto.*La strada che porta alla Spada Purificatrice si dice attraversi un villaggio popolato da mostri...*Mi chiedo se un tale villaggio esista."; break;
+        case 150 : texte = "Comunque, temo che il tuo equipaggiamento sia inadeguato per raggiungere quel tempio. Dovresti recarti dal fabbro del Villaggio Gerudo."; break;
+        case 151 : texte = "E' tempo di affrontare Ganon e riprendersi la Triforza!"; break;
+        case 152 : texte = "Hei! Devi pagare per aprire uno dei miei bauli!"; break;
+        case 153 : texte = "Uno di questi bauli contiene una parte di cuore. Vuoi provare per 10 rupie?*Puoi aprire un solo baule a tentativo, ok?               SI' ?            no  "; 
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<10) idsuiv=29; break;
-        case 154 : texte = "One of these chests contains a piece of heart. Do you want to try for 10 rupees?*You will only be allowed to open one chest, ok?               yes              NO ?"; break;
-        case 155 : texte = "Pick a chest."; break;
-        case 156 : texte = "I don't have anymore prizes to bring into play, sorry."; break;
-        case 157 : texte = "You lose! This chest is empty. Try again!"; break;
-        case 158 : texte = "Hello! If you are looking for the blacksmith, he lives a little further ahead."; break;
-        case 159 : texte = "Hello Link, I am the chief of this village.*You should go to see the blacksmith and show him what equipment you want him to improve.";
-            buffer = "I have heard of your quest, so I have arranged everything with him.*All will be free for you."; break;
-        case 160 : texte = "You don't need to drink this potion right now."; break;
-        case 161 : texte = "A green potion for 40 rupees. Are you interested?*              YES ?            no  "; 
+        case 154 : texte = "Uno di questi bauli contiene una parte di cuore. Vuoi provare per 10 rupie?*Puoi aprire un solo baule a tentativo, ok?               si'              NO ?"; break;
+        case 155 : texte = "Scegli un baule."; break;
+        case 156 : texte = "Non ho più premi da mettere in palio, mi dispiace."; break;
+        case 157 : texte = "Hai perso! Questo baule e' vuoto. Prova ancora!"; break;
+        case 158 : texte = "Salve! Se cerchi il fabbro, vive un po' piu' avanti."; break;
+        case 159 : texte = "Salve Link, io sono il capo del villaggio.*Dovresti andare ad incontrare il fabbro e mostrargli quale equipaggiamento vuoi che migliori.";
+            buffer = "Sono a conoscenza della tua missione, quindi lo ho gia' avvisato.*Sara' tutto gratis per te."; break;
+        case 160 : texte = "Non hai bisogno di bere questa pozione ora."; break;
+        case 161 : texte = "Una pozione verde per 40 rupie. Sei interessato?*              SI' ?            no  "; 
             if (gpJeu->getJoueur()->hasBouteille(0)!=1
             && gpJeu->getJoueur()->hasBouteille(1)!=1
             && gpJeu->getJoueur()->hasBouteille(2)!=1) {id=163; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<40) idsuiv=29;
             else idsuiv=108; break;
-        case 162 : texte = "A green potion for 40 rupees. Are you interested?*              yes              NO ?"; break;
-        case 163 : texte = "Come back when you have an empty bottle, and I will sell you a green potion which restores your magic meter."; break;
-        case 164 : texte = "Come back later. I am overbooked!"; break;
-        case 165 : texte = "May I do something for you?";
+        case 162 : texte = "Una pozione verde per 40 rupie. Sei interessato?*              si'              NO ?"; break;
+        case 163 : texte = "Torna quando avrai una bottiglia vuota e ti vendero' una pozione verde che ripristina il tuo livello di magia."; break;
+        case 164 : texte = "Torna più tardi. Sono al completo!"; break;
+        case 165 : texte = "Posso fare qualcosa per te?";
             if (gpJeu->getJoueur()->getEpee()==1) {id=166; chercheText();break;}
             if (gpJeu->getJoueur()->hasObjet(O_GANTS)==1 && gpJeu->getJoueur()->getObjet()==8) {
                 id=169; chercheText();break;}
@@ -866,42 +866,42 @@ case 4: // Italian
             && gpJeu->getJoueur()->nbCristaux()==7) {
                 id=172; chercheText();break;}
             break;
-        case 166 : texte = "Do you want me to temper your sword?**              YES ?            no  "; break;
-        case 167 : texte = "Do you want me to temper your sword?**              yes              NO ?"; break;
-        case 168 : texte = "Your sword triples in power and you can now shoot magic beams. So good!*"; break;
-        case 169 : texte = "Do you want me to upgrade your gloves?**              YES ?            no  "; break;
-        case 170 : texte = "Do you want me to upgrade your gloves?**              yes              NO ?"; break;
-        case 171 : texte = "The power of your gloves now helps you lift heavy rocks!"; break;
-        case 172 : texte = "Do you want me to upgrade your bow?**              YES ?            no  "; break;
-        case 173 : texte = "Do you want me to upgrade your bow?**              yes              NO ?"; break;
-        case 174 : texte = "Your bow now shoots silver arrows of cataclysmic power!"; break;
-        case 175 : texte = "Come back when you have an empty bottle, and I will sell you a blue potion which restores your health and your magic meter."; break;
-        case 176 : texte = "A blue potion for 160 rupees. Are you interested?*              YES ?            no  "; 
+        case 166 : texte = "Vuoi che tempri la tua spada?**              SI' ?            no  "; break;
+        case 167 : texte = "Vuoi che tempri la tua spada?**              si               NO ?"; break;
+        case 168 : texte = "La tua spada triplica il suo potere e ora puo' irradiare fasci magici. Grandioso!*"; break;
+        case 169 : texte = "Vuoi che migliori i tuoi guanti?**              SI' ?            no  "; break;
+        case 170 : texte = "Vuoi che migliori i tuoi guanti?**              si'              NO ?"; break;
+        case 171 : texte = "Il potere dei tuoi guanti ora ti permette di sollevare le roccie pesanti!"; break;
+        case 172 : texte = "Vuoi che migliori il tuo arco?**              SI' ?            no  "; break;
+        case 173 : texte = "Vuoi che migliori il tuo arco?**              si'              NO ?"; break;
+        case 174 : texte = "Il tuo arco ora può lanciare frecce d'argento dal potere devastante!"; break;
+        case 175 : texte = "torna quando avrai una bottiglia vuota e ti vendero' una pozione blu che ripristina salute e carica magica."; break;
+        case 176 : texte = "Una pozione blu per 160 rupie. Sei interessato?*              SI' ?            no  "; 
             if (gpJeu->getJoueur()->hasBouteille(0)!=1
             && gpJeu->getJoueur()->hasBouteille(1)!=1
             && gpJeu->getJoueur()->hasBouteille(2)!=1) {id=175; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<160) idsuiv=29;
             else idsuiv=108; break;
-        case 177 : texte = "A blue potion for 160 rupees. Are you interested?*              yes              NO ?"; break;
-        case 178 : texte = "Our village has been built here with the purpose of preventing careless adventurers from reaching the temple. I won't allow just anyone to pass."; break;
-        case 179 : texte = "Mmmm... You already found 4 crystals?*I have got to admit, you impress me...";
-            buffer = "All right, you are allowed to cross over the graveyard, at your own risk."; break;
-        case 181 : texte = "Talk to the guard at the north of the village. He will let you pass."; break;
-        case 182 : texte = "I see you're still alive...*Surprising."; break;
-        case 183 : texte = "The dark temple is the starting point of the way leading to a legendary object. This village only exists to dissuade adventurers from approaching."; break;
-        case 184 : texte = "So you found the Sword?*But... don't believe it is yours.";
-            buffer = "The Master Sword is among the most treasured heritage of Hyrule along with the Triforce. You will have to bring it back to its sanctuary once your mission is completed."; break;
-        case 186 : texte = "All the inhabitants of this village are spirits who answered to Princess Zelda's call."; break;
-        case 187 : texte = "When you returned peace to Hyrule and reunified the Light World with the Golden Land, Zelda secretly asked volunteer spirits to create this village to block";
-            buffer = "the access to a very high valued object."; break;
+        case 177 : texte = "Una pozione blu per 160 rupie. Sei interessato?*              si'              NO ?"; break;
+        case 178 : texte = "Il nostro villaggio e' stato costruito qui per evitare che avventurieri imprudenti raggiungano il tempio. Non lascerò passare chiunque."; break;
+        case 179 : texte = "Mmmm... Hai già trovato 4 cristalli?*Devo ammetterlo, mi hai impressionato...";
+            buffer = "Bene, hai il permesso di attraversare il cimitero, ma a tuo rischio."; break;
+        case 181 : texte = "Parla con la guardia a nord del villaggio. Ti lascera' passare."; break;
+        case 182 : texte = "Vedo che sei ancora vivo...*Surprendente."; break;
+        case 183 : texte = "Il tempio oscuro e' il punto di partenza per la via che porta a un oggetto leggendario. Questo villaggio esiste unicamenteper dissuadere gli avventuri dall'avvicinarcisi."; break;
+        case 184 : texte = "Così hai trovato la spada?*Ma... non pensare che ti appartenga.";
+            buffer = "La Spada Suprema Master e' uno dei più preziosi patrimoni di Hyrule insieme alla Triforza. Dovrai riportarla al suo santuario una volta completata la tua missione."; break;
+        case 186 : texte = "Tutti gli abitanti del villaggio sono spiriti che hanno risposto al richiamo della Principessa Zelda."; break;
+        case 187 : texte = "Quando riportasti la pace in Hyrule e riunisti il Mondo della Luce con la Landa Dorata, Zelda in segreto chiese agli degli spititi volontari di creare questo villaggio per bloccare";
+            buffer = "l'accesso ad un oggetto di altissimo valore."; break;
         
-        case 189 : texte = "Welcome Link!*Let me explain to you what I am doing here."; idsuiv=190; break;
-        case 190 : texte = "As you certainly have noticed, monsters appeared in Hyrule. It's the first time I can see monsters since your victory on Ganon."; idsuiv=191; break;
-        case 191 : texte = "I have decided to list all of them."; idsuiv=192; break;
-        case 192 : texte = "Unfortunately, I'm too fearful to meet them, so I need your help."; idsuiv=193; break;
-        case 193 : texte = "You have to fight each kind of monster and come to give me your report."; idsuiv=194; break;
-        case 194 : texte = "Each time you have defeated 7 new kinds of enemies, I will give you a piece of heart."; idsuiv=195; break;
-        case 195 : texte = "If you want to see what enemies you've already defeated, press the L and B buttons."; break;
+        case 189 : texte = "benvenuto Link!*Lascia che ti spieghi cosa sto facendo qui."; idsuiv=190; break;
+        case 190 : texte = "Come certamente avrai notato, dei mostri sono apparsi in Hyrule. E' la prima volta che vedo dei mostri dalla vittoria su Ganon."; idsuiv=191; break;
+        case 191 : texte = "Ho deciso di catalogarli tutti."; idsuiv=192; break;
+        case 192 : texte = "Sfortunatamente, sono troppo pauroso per incontrarli, quindi ho bisogno del tuo aiuto."; idsuiv=193; break;
+        case 193 : texte = "Devi sconfiggere ogni tipo di mostro e venire a farmi un resoconto."; idsuiv=194; break;
+        case 194 : texte = "ogni volta che avrai sconfitto 7 nuovi tipi di mostro, di daro' una parte di cuore."; idsuiv=195; break;
+        case 195 : texte = "Se vuoi vedere quali nemici hai già sconfitto, premi i tasti L e B."; break;
         
         
         case 196 : 
@@ -916,44 +916,44 @@ case 4: // Italian
                 }
             tmp = 7-(gpJeu->getJoueur()->nbEnnemis()%7);
             os << tmp;
-            if (tmp>1) texte = "You need "+os.str()+" more different enemies before your next reward.";
-            else texte = "You only need one more enemy before your next reward!";
+            if (tmp>1) texte = "Hai bisogno di "+os.str()+" mostri differenti ancora prima della tua prossima ricompensa.";
+            else texte = "Te ne serve solo uno ancora  prima della tua prossima ricompensa!";
             break;
-        case 203 : texte = "Take this gift as a thank you for your contribution to my project:"; break;
-        case 204 : texte = "I'm sorry, but I don't have anything for you anymore."; break;
-        case 205 : texte = "I can't take it in, you succeeded in defeating all kinds of enemies!*Congratulations, Link!"; break;
+        case 203 : texte = "Prendi questo dono come ringraziamento per il tuo contributo al mio progetto:"; break;
+        case 204 : texte = "Spiacente, ma non ho più nulla per te."; break;
+        case 205 : texte = "Non posso accettarlo, sei riuscito a sconfiggere tutti i tipi di nemici!*Congratulazioni, Link!"; break;
         
-        case 206 : texte = "                    Level 1:**                  Forest Temple"; break;
-        case 207 : texte = "                    Level 2:**                  Water Temple"; break;
-        case 208 : texte = "                    Level 3:**                 Mountain Temple"; break;
-        case 209 : texte = "                    Level 4:**                  Desert Temple"; break;
-        case 210 : texte = "                    Level 5:**                   Dark Temple"; break;
-        case 211 : texte = "                    Level 6:**                   Fire Temple"; break;
-        case 212 : texte = "                    Level 7:**                   Ice Temple"; break;
-        case 213 : texte = "                    Level ?:**                  Hidden Temple"; break;
-        case 214 : texte = "                  Last Level:**                 Hyrule Castle"; break;
+        case 206 : texte = "                   Livello 1:**              Tempio della Foresta"; break;
+        case 207 : texte = "                   Livello 2:**               Tempio dell'Acqua"; break;
+        case 208 : texte = "                   Livello 3:**              Tempio della Montagna"; break;
+        case 209 : texte = "                   Livello 4:**               Tempio del Deserto"; break;
+        case 210 : texte = "                   Livello 5:**                  Tempio Oscuro"; break;
+        case 211 : texte = "                   Livello 6:**                 Tempio del Fuoco"; break;
+        case 212 : texte = "                   Livello 7:**                Tempio di Ghiaccio"; break;
+        case 213 : texte = "                   Livello ?:**                  Tempio Segreto"; break;
+        case 214 : texte = "                 Ultimo livello:**             Castello di Hyrule"; break;
         
-        case 215 :texte = "                  Già stanco?                    ?                 CONTINUA                 ?                   Salva e esci                                Esci senza salvare             "; break;
-        case 216 :texte = "                  Già stanco?                                      Continua                     ?               SALVA E ESCI               ?                Esci senza salvare             "; break;
-        case 217 :texte = "                  Già stanco?                                      Continua                                     Salva e esci                   ?            ESCI SENZA SALVARE            ?"; break;
+        case 215 :texte = "                  Gia' stanco?                    ?                 CONTINUA                 ?                   Salva e esci                                Esci senza salvare             "; break;
+        case 216 :texte = "                  Gia' stanco?                                      Continua                     ?               SALVA E ESCI               ?                Esci senza salvare             "; break;
+        case 217 :texte = "                  Gia' stanco?                                      Continua                                     Salva e esci                   ?            ESCI SENZA SALVARE            ?"; break;
         
-        case 223 : texte = "At the exact same time Link touched the Triforce, the monsters disappeared,and peace returned.**Princess Zelda then made a great decision: she touched the Triforce and made her wish.**The Triforce had always been the origin of troubles in the Kingdom. Sooner or later, another evil creature would find it.**When Princess Zelda touched the relic, it disappeared from Hyrule... forever.";
-            buffer = "From this day, the people of Hyrule have lived in peace, without fear of new disasters.**Thus the Legend of Zelda, of the Triforce, and of the Golden Land, is achieved.**The Master Sword is said to rest safely somewhere and to be the last heirloom of Link's quest."; break;
-        case 224 : texte = "Congratulations for finding me, Link. As a reward, I give you Farore's Pendant. It increases your defense by one point."; break;
+        case 223 : texte = "nell'istante in cui Link tocco' la Triforza, i mostri sparirono e la pace ritorno'.**La Principessa Zelda allora prese una importante decisione: tocco' la Triforza ed espresse il suo desiderio.**La Triforza era sempre stata l'origine dei problemi del regno. Prima o poi un'altra creatura malvaggia l'avrebbe trovata.**Quando la Principessa Zelda tocco' la reliquia, spari' da Hyrule... per sempre.";
+            buffer = "Da quel giorno gli abitanti di Hyrule ha vissuto in pace, senza temere nuovi disastri.**Così la leggenda di Zelda, della Triforza e della Landa D'Oro si e' conclusa**La Spada Suprema  si dice riposi al sicuro da qualche parte e che sia l'unico cimelio rimasto delle gesta di Link."; break;
+        case 224 : texte = "Congratulazionsi per avermi trovato, Link. Come ricompensa ti dono il pendente di Farore. Aumenta la tua difesa di un punto."; break;
         case 225 : texte = "Vuoi salvare la partita?     **                    ? SI' ?*                      no  "; break;
         case 226 : texte = "Vuoi salvare la partita?     **                      si   *                    ? NO ?"; break;
         case 227 : texte = "Partita salvata."; break;
         
-        case 228 : texte = "The Kingdom of Hyrule has been in peace since Link, the last knight of Hyrule, had defeated the malicious Ganon and reclaimed the precious Triforce from him."; idsuiv = 229; break;
-        case 229 : texte = "Nobody knows what Link's wish to the Triforce was, but it had the effect of reunifying the Light and Dark World, and resurrecting the 7 wise men's descendants."; idsuiv = 230; break;
-        case 230 : texte = "Link then handed the Triforce and the Master Sword over to Princess Zelda, and people started believing that peace would last.*But the people were wrong..."; idsuiv=231; break;
-        case 231 : texte = "Unfortunately, Link's wish also had negative effects. Ganon and his henchmen were resurrected and got ready to attack."; idsuiv=232; break;
-        case 232 : texte = "Somewhere in Hyrule Forest, Link is sleeping without suspecting that Ganon has already moved into the attack, until a"; 
-            buffer="well-known voice talked to him in his sleep..."; break;
-        case 233 : texte = "Help me!*Help me!*It's me! Zelda!*I'm talking to you via telepathy."; idsuiv = 234; break;
-        case 234 : texte = "I am a prisoner in the dungeon of the castle!*I need your help!*Ganon is back, and he surely has already found the Triforce..."; idsuiv=235; break;
-        case 235 : texte = "Come, quickly, to the castle, Link! You are my only hope..."; break;
-        case 236 : texte = "AIUTO: Premi L e X per consultare il menu di aiuto."; break;
+        case 228 : texte = "Il regno di Hyrule e' stato in pace sin da quando Link, l'ultimo cavaliere di Hyrule, ha sconfitto il malefico Ganon e recuperato da lui la preziosa Triforza."; idsuiv = 229; break;
+        case 229 : texte = "nessuno sa quale desiderio abbia espresso Link alla Triforza, ma ha avuto l'effetto di riunificare i mondi della luce e dell'oscurita', e di resuscitare i discendenti dei 7 uomini saggi."; idsuiv = 230; break;
+        case 230 : texte = "Link allora consegno' la Triforza e la Spada Supremathen alla Principessa Zelda, e le persone cominciarono a credere che la pace sarebbe durata per sempre.*Ma si sbagliavano..."; idsuiv=231; break;
+        case 231 : texte = "Sfortunatamente, il desiderio di Link ha avuto anche effetti negativi. Anche Ganon e i suoi scagnozzi erano resusciti ed erano pronti all'attacco."; idsuiv=232; break;
+        case 232 : texte = "In qualhe posto nella foresta di Hyrule, Link sta dormendo senza sospettare che Ganon ha già iniziato il suo attacco, quando una"; 
+            buffer="voce familiare gli parlo nel sonno..."; break;
+        case 233 : texte = "Aiutami!*Aiutami!*Sono io! Zelda!*Ti sto parlando telepaticamente."; idsuiv = 234; break;
+        case 234 : texte = "Sono prigioniera nelle segrete del catello!*Ho bisogno del tuo aiuto!*Ganon e' tornato, e sicuramente ha gia' trovato la Triforza..."; idsuiv=235; break;
+        case 235 : texte = "Vieni di corsa al castello, Link! Sei la mia unica speranza..."; break;
+        case 236 : texte = "SUGGERIMENTO: Premi L e X per consultare il menu di aiuto."; break;
     }
 	break; // Italian
 
