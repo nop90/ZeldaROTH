@@ -120,14 +120,14 @@ int FMUSIC_GetMasterVolume(FMUSIC_MODULE* s)
 	return MasterVolume;
 }
 
-void FMUSIC_SetMasterVolume(FMUSIC_MODULE* s, u8 previous_volume)
+void FMUSIC_SetMasterVolume(FMUSIC_MODULE* s, u8 volume)
 {
-	MasterVolume = previous_volume;
+	MasterVolume = volume;
 }
 
-void FSOUND_SetSFXMasterVolume(u8 previous_volson)
+void FSOUND_SetSFXMasterVolume(u8 volson)
 {
-	SFXMasterVolume = previous_volson;
+	SFXMasterVolume = volson;
 }
 
 void FSOUND_PlaySound(int chl,FSOUND_SAMPLE* s)

@@ -545,16 +545,18 @@ int Keyboard::pollKeys(int keys) {
 					if (volume==0) gpJeu->getAudio()->stopMusic();}
                 if (ligneOption == 1) {
                     volson-=64; if (volson < 0) volson = 0; tmp=1;
-                    gpJeu->getAudio()->setVolson(volson); gpJeu->getAudio()->playSound(3);}
+                    gpJeu->getAudio()->setVolson(volson); 
+					gpJeu->getAudio()->playSound(3);}
                 if (ligneOption == 2) {
                     setLanguage(getLanguage()-1);tmp=1;
                     gpJeu->getAudio()->playSound(3);}}
             if ((keys&SDLK_RIGHT) && !tmp) {
                 if (ligneOption == 0) {
-				//	int vtemp = volume;
+					int vtemp = volume;
                     volume+=64; if (volume > 64) volume = 64; tmp=1;
-                    gpJeu->getAudio()->setVolume(volume);gpJeu->getAudio()->playSound(3);
-				//	if (vtemp==0) 
+                    gpJeu->getAudio()->setVolume(volume);
+					gpJeu->getAudio()->playSound(3);
+					if (vtemp==0) 
 					gpJeu->getAudio()->playMusic(46);}
                 if (ligneOption == 1) {
                     volson+=64; if (volson > 64) volson = 64; tmp=1;

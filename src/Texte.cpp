@@ -112,11 +112,11 @@ case 2: // French
         case 64 : texte = "O : Roc de la Tortue*E : Lac Hylia"; break;
         case 65 : texte = "Temple Caché**Ici repose la lame purificatrice, Excalibur."; break;
         case 66 : texte = "N : Vers le cimetière hanté"; break;
-        case 67 : texte = "Tu as trouvé la carte du donjon !!!*Appuie sur L et Y pour voir le plan."; break;
+        case 67 : texte = "Tu as trouvé la carte du donjon !!!*Appuie sur START pour voir le plan."; break;
         case 68 : texte = "Tu as trouvé la boussole !!!*Tu peux localiser le boss et les coffres sur le plan."; break;
         case 69 : texte = "Tu as trouvé la clé du boss !!!"; break;
         case 70 : texte = "Tu as trouvé une petite clé !!!*Approche une porte pour l'ouvrir."; break;
-        case 71 : texte = "Tu as trouvé les gants !!!*Utilise-les pour soulever des objets en les équipant ou en appuyant sur X."; break;
+        case 71 : texte = "Tu as trouvé les gants !!!*Utilise-les pour soulever des objets en les équipant ou en appuyant sur Y."; break;
         case 72 : 
             texte = "Tu as trouvé un cristal magique !!!"; 
             tmp = 7-gpJeu->getJoueur()->nbCristaux();
@@ -417,11 +417,11 @@ case 3: // German
         case 64 : texte = "W: Schildkrötfelsen*O: See Hylia"; break;
         case 65 : texte = "Geheim-Tempel**Hier ruht das Schwert Excalibur."; break;
         case 66 : texte = "N: Zum Spuk-Friedhof"; break;
-        case 67 : texte = "Du hast den Tempelplan gefunden!!!*Drück L und Y, um den Plan anzusehen."; break;
+        case 67 : texte = "Du hast den Tempelplan gefunden!!!*Drück START, um den Plan anzusehen."; break;
         case 68 : texte = "Du hast den Kompass gefunden!!!*Du kannst nun den Boss und die Truhen auf dem Plan sehen."; break;
         case 69 : texte = "Du hast den Boss-Schlüssel gefunden!!!"; break;
         case 70 : texte = "Du hast einen Schlüssel gefunden!!!*Geh auf eine Tür zu, um diese zu öffnen."; break;
-        case 71 : texte = "Du hast die magischen Handschuhe gefunden!!!*Benutz diese (oder drück X) zum Heben/Schieben schwerer Objekte."; break;
+        case 71 : texte = "Du hast die magischen Handschuhe gefunden!!!*Benutz diese (oder drück Y) zum Heben/Schieben schwerer Objekte."; break;
         case 72 :
             texte = "Du hast einen Kristall gefunden!!!";
             tmp = 7-gpJeu->getJoueur()->nbCristaux();
@@ -724,11 +724,11 @@ case 4: // Italian
         case 64 : texte = "O: Roccia della tartaruga*E: Lago Hylia"; break;
         case 65 : texte = "Tempio segreto**Qui riposa la spada purificatrice, La Spada Suprema.."; break;
         case 66 : texte = "N: Al cimitero infestato"; break;
-        case 67 : texte = "Hai trovato la mappa del tempio!*Premi L e Y per vedere la mappa."; break;
+        case 67 : texte = "Hai trovato la mappa del tempio!*Premi START per vedere la mappa."; break;
         case 68 : texte = "Hai trovato la bussola!*Puoi localizzare i bauli e il Boss sulla mappa."; break;
         case 69 : texte = "Hai trovato la chiave per il Boss!"; break;
         case 70 : texte = "Hai trovato una piccola chiave!*Avvicinati ad una porta per aprirla."; break;
-        case 71 : texte = "Hai trovato i guanti!*Usali per alzare gli oggetti con il tasto X."; break;
+        case 71 : texte = "Hai trovato i guanti!*Usali per alzare gli oggetti con il tasto Y."; break;
         case 72 : 
             texte = "Hai trovato un Cristallo Magico!"; 
             tmp = 7-gpJeu->getJoueur()->nbCristaux();
@@ -938,22 +938,22 @@ case 4: // Italian
         case 217 :texte = "                  Gia' stanco?                                     Continua                                     Salva e esci                   ?            ESCI SENZA SALVARE            ?"; break;
         
         case 223 : texte = "nell'istante in cui Link tocco' la Triforza, i mostri sparirono e la pace ritorno'.**La Principessa Zelda allora prese una importante decisione: tocco' la Triforza ed espresse il suo desiderio.**La Triforza era sempre stata l'origine dei problemi del regno. Prima o poi un'altra creatura malvaggia l'avrebbe trovata.**Quando la Principessa Zelda tocco' la reliquia, spari' da Hyrule... per sempre.";
-            buffer = "Da quel giorno gli abitanti di Hyrule ha vissuto in pace, senza temere nuovi disastri.**Così la leggenda di Zelda, della Triforza e della Landa D'Oro si e' conclusa**La Spada Suprema  si dice riposi al sicuro da qualche parte e che sia l'unico cimelio rimasto delle gesta di Link."; break;
-        case 224 : texte = "Congratulazionsi per avermi trovato, Link. Come ricompensa ti dono il pendente di Farore. Aumenta la tua difesa di un punto."; break;
+            buffer = "Da quel giorno gli abitanti di Hyrule avevamo vissuto in pace, senza temere nuovi disastri.**Così la leggenda di Zelda, della Triforza e della Landa D'Oro si e' conclusa**La Spada Suprema  si dice riposi al sicuro da qualche parte e che sia l'unico cimelio rimasto delle gesta di Link."; break;
+        case 224 : texte = "Congratulazioni per avermi trovato, Link. Come ricompensa ti dono il pendente di Farore. Aumenta la tua difesa di un punto."; break;
         case 225 : texte = "Vuoi salvare la partita?     **                    ? SI' ?*                      no  "; break;
         case 226 : texte = "Vuoi salvare la partita?     **                      si   *                    ? NO ?"; break;
         case 227 : texte = "Partita salvata."; break;
         
-        case 228 : texte = "Il regno di Hyrule e' stato in pace sin da quando Link, l'ultimo cavaliere di Hyrule, ha sconfitto il malefico Ganon e recuperato da lui la preziosa Triforza."; idsuiv = 229; break;
+        case 228 : texte = "Il regno di Hyrule e' stato in pace sin da quando Link, l'ultimo cavaliere di Hyrule, ha sconfitto il malefico Ganon e recuperato la preziosa Triforza."; idsuiv = 229; break;
         case 229 : texte = "nessuno sa quale desiderio abbia espresso Link alla Triforza, ma ha avuto l'effetto di riunificare i mondi della luce e dell'oscurita', e di resuscitare i discendenti dei 7 uomini saggi."; idsuiv = 230; break;
-        case 230 : texte = "Link allora consegno' la Triforza e la Spada Suprema alla Principessa Zelda, e le persone cominciarono a credere che la pace sarebbe durata per sempre.*Ma si sbagliavano..."; idsuiv=231; break;
-        case 231 : texte = "Sfortunatamente, il desiderio di Link ha avuto anche effetti negativi. Anche Ganon e i suoi scagnozzi erano resusciti ed erano pronti all'attacco."; idsuiv=232; break;
-        case 232 : texte = "In qualche posto nella foresta di Hyrule, Link sta dormendo senza sospettare che Ganon ha gia' iniziato il suo attacco, quando una"; 
-            buffer="voce familiare gli parla nel sonno..."; break;
+        case 230 : texte = "Link aveva poi affidato la Triforza e la Spada Suprema alla Principessa Zelda, e le persone cominciarono a credere che la pace sarebbe durata per sempre.*Ma si sbagliavano..."; idsuiv=231; break;
+        case 231 : texte = "Sfortunatamente, il desiderio di Link ha avuto anche effetti negativi. Anche Ganon e i suoi scagnozzi erano resuscitati ed furono presto di nuovo pronti all'attacco."; idsuiv=232; break;
+        case 232 : texte = "In qualche posto nella foresta di Hyrule, Link sta dormendo senza sospettare che Ganon ha gia' iniziato il suo attacco, quando ..."; 
+            buffer="una voce familiare gli parla nel sonno..."; break;
         case 233 : texte = "Aiutami!*Aiutami!*Sono io! Zelda!*Ti sto parlando telepaticamente."; idsuiv = 234; break;
         case 234 : texte = "Sono prigioniera nelle segrete del castello!*Ho bisogno del tuo aiuto!*Ganon e' tornato, e sicuramente ha gia' trovato la Triforza..."; idsuiv=235; break;
         case 235 : texte = "Vieni di corsa al castello, Link! Sei la mia unica speranza..."; break;
-        case 236 : texte = "SUGGERIMENTO: Premi L e X per consultare il menu di aiuto."; break;
+        case 236 : texte = "SUGGERIMENTO: Premi L e Y per consultare il menu di aiuto."; break;
     }
 	break; // Italian
 
@@ -961,7 +961,7 @@ case 5: // Spanish
 
     switch (id) {
         case 1  : texte = "Has encontrado un escudo !!!**Tu defensa aumenta de un punto!"; break;
-        case 2  : texte = "Has encontrado una espada !!!**Ahora puedes defenderte contra los monstros con la tecla Z (o W) !!!*Manten Z para descargar el giratorio !"; break;
+        case 2  : texte = "Has encontrado una espada !!!**Ahora puedes defenderte contra los monstros con la tecla B !!!*Manten B para descargar el giratorio !"; break;
         case 3  : 
             tmp = 4-(gpJeu->getJoueur()->nbQuarts()%4);
             os << tmp;
@@ -1029,11 +1029,11 @@ case 5: // Spanish
         case 64 : texte = "O : Tortuga de Roca*E : Lago de Hylia"; break;
         case 65 : texte = "Templo Oculto**Aquí descansa la Espada del Golpe Contra el Mal, la Espada Maestra."; break;
         case 66 : texte = "N : Hacia el Cimenterio encantado"; break;
-        case 67 : texte = "Has encontrado el mapa del calabozo !!!*Pulsa L y Y para verlo."; break;
+        case 67 : texte = "Has encontrado el mapa del calabozo !!!*Pulsa START para verlo."; break;
         case 68 : texte = "Has encontrado la brújula !!!*Puedes localizar el jefe y las arcas sobre el mapa."; break;
         case 69 : texte = "Has encontrado la llave del jefe !!!"; break;
         case 70 : texte = "Has encontrado una llave pequeña !!!*Acercate de una puerta para abrirla."; break;
-        case 71 : texte = "Has encontrado los Guantes !!!*Utilizalos para levantar objetos equipandolos o pulsando X."; break;
+        case 71 : texte = "Has encontrado los Guantes !!!*Utilizalos para levantar objetos equipandolos o pulsando Y."; break;
         case 72 : 
             texte = "Has encontrado un cristal magico !!!"; 
             tmp = 7-gpJeu->getJoueur()->nbCristaux();
@@ -1333,11 +1333,11 @@ default:
         case 64 : texte = "W: Turtle Rock*E: Lake Hylia"; break;
         case 65 : texte = "Hidden Temple**Here rests the Sword of Evils Bane, the Master Sword."; break;
         case 66 : texte = "N: To the Haunted Graveyard"; break;
-        case 67 : texte = "You found the Dungeon Map!*Press the L and Y button to view the map."; break;
+        case 67 : texte = "You found the Dungeon Map!*Press the START button to view the map."; break;
         case 68 : texte = "You found the Compass!*You can locate the boss and chests on the plan."; break;
         case 69 : texte = "You found the Boss Key!"; break;
         case 70 : texte = "You found a small key!*Walk up to a door to open it."; break;
-        case 71 : texte = "You found the Gloves!*Use them to lift objects with the X button."; break;
+        case 71 : texte = "You found the Gloves!*Use them to lift objects with the Y button."; break;
         case 72 : 
             texte = "You found a Magic Crystal!"; 
             tmp = 7-gpJeu->getJoueur()->nbCristaux();

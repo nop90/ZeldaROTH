@@ -58,7 +58,7 @@ int main(int argc, char** argv) {
     Uint32 lastAnimTime = SDL_GetTicks();
 	
 
-    while (gLoop) {
+    while (gLoop && aptMainLoop()) {
 
         if (gpKeyboard->gererClavier() == -1) {gLoop = false;}
 

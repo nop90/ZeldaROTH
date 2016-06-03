@@ -29,9 +29,9 @@ int FSOUND_GetSFXMasterVolume(); //
 int FMUSIC_GetMasterVolume(FMUSIC_MODULE* s); 
 
 
-void FMUSIC_SetMasterVolume(FMUSIC_MODULE* s, u8 previous_volume);
+void FMUSIC_SetMasterVolume(FMUSIC_MODULE* s, u8 volume);
 void FMUSIC_FreeSong(FMUSIC_MODULE* s);
-void FSOUND_SetSFXMasterVolume(u8 previous_volson);
+void FSOUND_SetSFXMasterVolume(u8 volson);
 
 void initSFX(FSOUND_SAMPLE* s);
 void loadSFX(FSOUND_SAMPLE* s, const char* filename, u32 format);

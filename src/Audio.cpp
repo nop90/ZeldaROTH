@@ -41,8 +41,9 @@ Audio::~Audio() {
     }
 }
 
-void Audio::setVolume(int vol) {volume=vol;
-    if (previous_volume == -1) previous_volume = FMUSIC_GetMasterVolume(music);
+void Audio::setVolume(int vol) {
+	volume=vol;
+//    if (previous_volume == -1) previous_volume = FMUSIC_GetMasterVolume(music);
     FMUSIC_SetMasterVolume(music, volume);}
 void Audio::setVolson(int volson) {FSOUND_SetSFXMasterVolume(volson);
    // for (int i = 0; i < 40; i++) Mix_VolumeChunk(sons[i], volson);
@@ -120,7 +121,9 @@ void Audio::playMusic(int id) {
                 FMUSIC_PlaySong(music);
                 specialId = 0;
             }
-        }
+        } else {
+            FMUSIC_PlaySong(music);
+		}
     }
 }
 
