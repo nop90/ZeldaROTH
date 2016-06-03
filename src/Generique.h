@@ -11,7 +11,6 @@
 #ifndef __GENERIQUE_H__
 #define __GENERIQUE_H__
 
-//#include <SDL/SDL.h>
 #include "3ds/os_3ds.h"
 #include "3ds/gfx_3ds.h"
 

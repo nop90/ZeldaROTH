@@ -11,7 +11,6 @@
 #ifndef __ENCYCLOPEDIE_H__
 #define __ENCYCLOPEDIE_H__
 
-//#include <SDL/SDL.h>
 #include "3ds/os_3ds.h"
 
 #include "Jeu.h"

@@ -10,7 +10,6 @@
 
 #include <iostream>
 
-//#include <SDL/SDL.h>
 #include "3ds/os_3ds.h"
 
 /*#include "Menu.h"
@@ -119,7 +118,10 @@ int Keyboard::pollKeys(int keys) {
     }
     if (keys & KMOD_ALT) {
 
-	if ( (keys &  SDLK_x) && mode == 0) {mode = 17; gpJeu->getGenerique()->initAide1(); 
+	if ( (keys &  SDLK_x) && mode == 0) {
+		mode = 17; 
+		gpJeu->setStop(true);
+		gpJeu->getGenerique()->initAide1(); 
 		gpJeu->getAudio()->playSound(1);}
         if (keys & SDLK_F4) return -1;
 		if ((keys & SDLK_RETURN ) && tmpa==0) {
@@ -434,6 +436,7 @@ int Keyboard::pollKeys(int keys) {
             (gpJeu->isDehors() || gpJeu->isDonjon())
             && !gpJeu->getStop() && gpJoueur->getVie()>0 && !tmpp) {
                 mode = 12;
+				gpJeu->setStop(true);
                 gpJeu->getAudio()->playSound(1);
                 gpCarte->init();
                 tmpp=1;
@@ -650,6 +653,7 @@ int Keyboard::pollKeys(int keys) {
         case 12 :
             if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && !tmp) {
                 mode = 0;
+				gpJeu->setStop(false);
                 gpJeu->getAudio()->playSound(2);
                 tmp=1;
             }
@@ -668,6 +672,7 @@ int Keyboard::pollKeys(int keys) {
         case 13 :
             if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && !tmp) {
                 mode = 0;
+				gpJeu->setStop(false);
                 gpJeu->getAudio()->playSound(2);
                 tmp=1;
             }
@@ -751,6 +756,7 @@ int Keyboard::pollKeys(int keys) {
         case 17 :
             if (!(keys & KMOD_ALT) && (keys&SDLK_RETURN) && !tmp) {
                 mode = 0;
+				gpJeu->setStop(false);
                 gpJeu->getAudio()->playSound(2);
                 tmp=1;
             }
@@ -763,11 +769,14 @@ int Keyboard::pollKeys(int keys) {
         case 18 :
             if ((keys&SDLK_RETURN) && !tmp) {
                 mode = 0;
+				gpJeu->setStop(false);
                 gpJeu->getAudio()->playSound(2);
                 tmp=1;
             }
             if ((keys&SDLK_LEFT) && !tmp) {
-                mode = 17; gpJeu->getGenerique()->initAide1();
+                mode = 17; 
+				gpJeu->setStop(true);
+				gpJeu->getGenerique()->initAide1();
                 gpJeu->getAudio()->playSound(3); tmp=1;}
             
             if (!(keys&SDLK_RETURN) && !(keys&SDLK_LEFT) && tmp) tmp=0;

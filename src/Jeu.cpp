@@ -157,12 +157,6 @@ int Jeu::nbEnnemis() {
 
 void Jeu::draw(SDL_Surface* screen) {
     
-//    if (menu || gpMenu->getVal()) {
-	if (menu) {
-		drawFreeze(screen);
-		return;
-	} 
-
     if (!transition) scrolling();
     
     gpMonde->drawSol(screen, phg);
@@ -189,35 +183,7 @@ void Jeu::draw(SDL_Surface* screen) {
     if (text && !transition) gpTexte->draw(screen);
 }
 
-void Jeu::drawFreeze(SDL_Surface* screen) {
-    
-    if (!transition) scrolling();
-    
-    gpMonde->drawSol(screen, phg);
-    
-    gpPiege->drawSpecial(screen);
-    
-    if (!transition) {
-        gpCaisse->draw(screen);
-        gpObjet->draw(screen);
-        gpPnj->draw(screen);
-//        gpEnnemi->draw(screen);
-        gpSnipe->draw(screen);
-        gpProjectile->draw(screen);
-    }
-    
-    gpJoueur->draw(screen);
-    gpPiege->draw(screen);
-    gpMonde->drawAir(screen, phg);
-    
-    if (transition) gpMonde->defilTransit();
-    
-    gpStatut->draw(screen);
-	SDL_FillRect(screen, NULL, RGBA8(0, 0, 0, 0x80));
-}
-
 void Jeu::drawMenu(SDL_Surface* screen) {
-//	if (menu || gpMenu->getVal()) 
 		gpMenu->draw(screen);
 }
 

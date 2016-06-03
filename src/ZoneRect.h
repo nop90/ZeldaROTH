@@ -11,7 +11,6 @@
 #ifndef __ZONERECT_H__
 #define __ZONERECT_H__
 
-//#include <SDL/SDL.h>
 #include "3ds/gfx_3ds.h"
 
 #include "Listable.h"

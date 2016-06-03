@@ -19,8 +19,6 @@
 #include <iostream>
 #include <fstream>
 
-//#include <SDL/SDL.h>
-//#include <SDL/SDL_image.h>
 #include "3ds/os_3ds.h"
 
 using namespace std;

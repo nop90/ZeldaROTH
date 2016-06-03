@@ -18,7 +18,6 @@
 
 #include "3ds/gfx_3ds.h"
 
-
 Projectile::Projectile(Jeu* jeu, int type, Direction dir, int a, int b, int vit) : 
 Listable(), gpJeu(jeu), id(type), direction(dir), x(a), y(b), anim(0), max(0), 
 vanim(120), vie(1), hauteur(0), vitesse(vit), image(NULL), etape(1), chemin(0), 

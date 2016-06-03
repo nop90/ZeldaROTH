@@ -12,8 +12,6 @@
 #include <iostream>
 #include <string>
 
-//#include <SDL/SDL.h>
-//#include <SDL/SDL_image.h>
 #include "3ds/gfx_3ds.h"
 
 #include "Menu.h"

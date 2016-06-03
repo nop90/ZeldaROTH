@@ -11,8 +11,6 @@
 #ifndef __STATUT_H__
 #define __STATUT_H__
 
-//#include <SDL/SDL.h>
-//#include <SDL/SDL_image.h>
 #include "3ds/gfx_3ds.h"
 
 class Jeu;

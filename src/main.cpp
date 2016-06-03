@@ -8,8 +8,6 @@
 
 */
 
-//#include <SDL/SDL.h>
-//#include <SDL/SDL_rotozoom.h>
 #include "3ds/os_3ds.h"
 
 #include <iostream>
@@ -67,10 +65,13 @@ int main(int argc, char** argv) {
             case 13 : //carte
             case 17 : //menu d'aide 1
             case 18 : //menu d'aide 2
-                gpJeu->drawFreeze(gpScreen); 
+                gpJeu->draw(gpScreen);
+				SDL_FillRect(gpScreen, NULL, RGBA8(0, 0, 0, 0x80));
 				break;
             case 0 : //jeu normal
-                gpJeu->draw(gpScreen); break;
+                gpJeu->draw(gpScreen); 
+				if (gpJeu->getMenu()) SDL_FillRect(gpScreen, NULL, RGBA8(0, 0, 0, 0x80));
+				break;
             case 1 : //disclamer <-- Note by NOP90 - never used
             case 2 : //logo
                 gpGenerique->draw(gpScreen); break;

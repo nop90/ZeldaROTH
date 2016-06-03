@@ -9,8 +9,6 @@
 */
 
 #include "Listable.h"
-#include "3ds/gfx_3ds.h" //cancellare
-
 
 Listable::Listable() : suivant(0), id(0) {
 }

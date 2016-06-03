@@ -8,8 +8,6 @@
 
 */
 
-//#include <SDL/SDL.h>
-//#include <SDL/SDL_image.h>
 #include "os_3ds.h"
 
 #include "Texte.h"

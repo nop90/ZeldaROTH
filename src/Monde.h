@@ -11,8 +11,6 @@
 #ifndef __MONDE_H__
 #define __MONDE_H__
 
-//#include <SDL/SDL.h>
-//#include <SDL/SDL_image.h>
 #include "3ds/os_3ds.h"
 
 class Jeu;

@@ -11,7 +11,6 @@
 #ifndef __PERSONNAGE_H__
 #define __PERSONNAGE_H__
 
-// #include <SDL/SDL_image.h>
 #include "3ds/os_3ds.h"
 
 #include "ZoneRect.h"

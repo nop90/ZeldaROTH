@@ -11,7 +11,6 @@
 #ifndef __JEU_H__
 #define __JEU_H__
 
-//#include <SDL/SDL.h>
 #include "3ds/os_3ds.h"
 
 #include "Audio.h"
@@ -36,7 +35,6 @@ class Jeu {
         void init(int save);
         void reinit(int save);
         void draw(SDL_Surface* screen);
-        void drawFreeze(SDL_Surface* screen);
 		void drawMenu(SDL_Surface* screen);
 		Menu* getMenuPtr();
         Joueur* getJoueur();

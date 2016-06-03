@@ -11,7 +11,6 @@
 #ifndef __MENU_H__
 #define __MENU_H__
 
-//#include <SDL/SDL.h>
 #include "3ds/gfx_3ds.h"
 #include "3ds/os_3ds.h"
 #include <3ds.h>
