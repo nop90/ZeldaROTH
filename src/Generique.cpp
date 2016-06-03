@@ -135,7 +135,7 @@ void Generique::initSelection() {
 switch(getLanguage()) {
 
 case 2: // French
-   gpJeu->affiche(image, "ECRAN DE SELECTION", 40, 16);
+   gpJeu->affiche(image, "SELECTION", 40, 16);
     gpJeu->affiche(image, "1.", 44, 56);
     gpJeu->affiche(image, "2.", 44, 104);
     gpJeu->affiche(image, "3.", 44, 152);
@@ -261,50 +261,7 @@ void Generique::initOption() {
     cadre(16,107,288,32);
     cadre(16,150,288,32);
     cadre(16,192,136,32);
-    
-switch(getLanguage()) {
 
-case 2: // French
-    gpJeu->affiche(image, "OPTIONS", 40, 16);
-    gpJeu->affiche(image, "MUSIQUE", 60, 72);
-    gpJeu->affiche(image, "SON", 60, 115);
-    gpJeu->affiche(image, "LANGUE", 60, 158);
-    gpJeu->affiche(image, "RETOUR", 63, 200);
-break;
-
-case 3: // German
-    gpJeu->affiche(image, "OPTIONEN", 42, 16);
-    gpJeu->affiche(image, "MUSIK", 60, 72);
-    gpJeu->affiche(image, "TON", 60, 115);
-    gpJeu->affiche(image, "SPRACHE", 60, 158);
-    gpJeu->affiche(image, "ZURÜCK", 60, 200);
-break;
-
-case 4: // Italian
-    gpJeu->affiche(image, "OPZIONI", 40, 16);
-    gpJeu->affiche(image, "MUSICA", 60, 72);
-    gpJeu->affiche(image, "SUONI", 60, 115);
-    gpJeu->affiche(image, "LINGUA", 60, 158);
-    gpJeu->affiche(image, "INDIETRO", 63, 200);
-break;
-
-case 5: // Spanish
-   gpJeu->affiche(image, "OPCIONES", 40-1, 16);
-    gpJeu->affiche(image, "MUSICA", 60, 72);
-    gpJeu->affiche(image, "SONIDOS", 60, 115);
-    gpJeu->affiche(image, "IDIOMA", 60, 158);
-    gpJeu->affiche(image, "ANTERIOR", 63-6, 200);
-break;
-
-default:
-    gpJeu->affiche(image, "OPTIONS", 40, 16);
-    gpJeu->affiche(image, "MUSIC", 60, 72);
-    gpJeu->affiche(image, "SOUNDS", 60, 115);
-    gpJeu->affiche(image, "LANGUAGE", 60, 158);
-    gpJeu->affiche(image, "RETURN", 63, 200);
-break;	
-}
-    
     src.x = 0; src.y = 96; dst.x = 128; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     for (int i = 144; i < 264; i+=16) {
@@ -588,30 +545,30 @@ case 2: // French
     gpJeu->affiche(image, "Valider / Passer texte : A", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Déplacer Link : Flèches de direction", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
-        gpJeu->affiche(image, "Courir : L maintenu", 24, ligne); 
+        gpJeu->affiche(image, "Courir : R maintenu", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
         gpJeu->affiche(image, "Coup d'épée : B", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Attaque Tornade : B maintenu puis lâché", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Menu de sélection d'objet : START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Menu de sélection d'objet : L + START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Porter sans équiper les gants : X", 24, ligne); 
+        gpJeu->affiche(image, "Porter sans équiper les gants : Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Afficher la carte : L et Y (extérieur ou donjons)", 24, ligne);
-    else gpJeu->affiche(image, "Afficher la carte : L et Y (dans les donjons)", 24, ligne);
+        gpJeu->affiche(image, "Afficher la carte : START (extérieur ou donjons)", 24, ligne);
+    else gpJeu->affiche(image, "Afficher la carte : START (dans les donjons)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "Afficher les monstres vaincus : L et B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Regarder autour : R et direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : L et direction", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Agrandir / Rétrécir : L et A", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
@@ -628,30 +585,30 @@ case 3: // German
     gpJeu->affiche(image, "Bestätigen / Weiter im Text: A", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Link bewegen: Cursortasten", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
-        gpJeu->affiche(image, "Rennen : L und Cursortasten", 24, ligne);
+        gpJeu->affiche(image, "Rennen : R und Cursortasten", 24, ligne);
         ligne+=16;}
     if (gpJoueur->getEpee()) {
         gpJeu->affiche(image, "Schwert benutzen: B", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Rundumschlag: B halten und loslassen", 24, ligne);
         ligne+=16;}
-    gpJeu->affiche(image, "Gegenstand wählen: START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Gegenstand wählen: L und START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Gegenstand benutzen: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Gegenstand benutzen: X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: X", 24, ligne);
+        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: Y", 24, ligne);
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Plan ansehen: L und Y (außen oder im Tempel)", 24, ligne);
-    else gpJeu->affiche(image, "Plan ansehen: L und Y (im Tempel)", 24, ligne);
+        gpJeu->affiche(image, "Plan ansehen: START (außen oder im Tempel)", 24, ligne);
+    else gpJeu->affiche(image, "Plan ansehen: START (im Tempel)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "Bisher besiegte Monster: L und B", 24, ligne);
         ligne+=16;}
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Sich umsehen: R und Cursortasten", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sich umsehen: L und Cursortasten", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Vollbild / Fenster: L und A", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
@@ -667,30 +624,30 @@ case 4: // Italian
     gpJeu->affiche(image, "Conferma / Chiudi testo: A", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Muovere Link: pad direzionale", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
-        gpJeu->affiche(image, "Run : L hold", 24, ligne); 
+        gpJeu->affiche(image, "Run : R hold", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
         gpJeu->affiche(image, "Usa la spada: B", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Attacco rotante: trattieni B poi lascia", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Selezione oggetto: START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Selezione oggetto: L e START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Usa oggetto selezionato: X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "raccogli oggetti (con guanti): X", 24, ligne); 
+        gpJeu->affiche(image, "raccogli oggetti (con guanti): Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Apri la mappa: L e Y (fuori dai templi)", 24, ligne);
-    else gpJeu->affiche(image, "Apri la mappa: L e Y (nei templi)", 24, ligne);
+        gpJeu->affiche(image, "Apri la mappa: START (fuori dai templi)", 24, ligne);
+    else gpJeu->affiche(image, "Apri la mappa: START (nei templi)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "Gurda mostri uccsi: L e B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Guarda intorno: R e direzione", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Guarda intorno: L e direzione", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Allarga / Riduci: L e A", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
@@ -707,30 +664,30 @@ case 5: // Spanish
     gpJeu->affiche(image, "Validar / Pasar texto : A", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Mover a Link : Flechas de dirección", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
-        gpJeu->affiche(image, "Correr : L y dirección ", 24, ligne); 
+        gpJeu->affiche(image, "Correr : R y dirección ", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
         gpJeu->affiche(image, "Golpe de espada : B", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Giratorio : B mantenido luego soltado", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Menu de selección del objeto : START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Menu de selección del objeto : L y START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Levantar sin equipar los guantes : X", 24, ligne); 
+        gpJeu->affiche(image, "Levantar sin equipar los guantes : Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Ver el mapa : L y Y (exterior o templos)", 24, ligne);
-    else gpJeu->affiche(image, "Ver el mapa : L y Y (en los templos)", 24, ligne);
+        gpJeu->affiche(image, "Ver el mapa : START (exterior o templos)", 24, ligne);
+    else gpJeu->affiche(image, "Ver el mapa : START (en los templos)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "Ver los monstros vencidos : L y B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Mirar alrededor : R y dirección", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Mirar alrededor : L y dirección", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Agrandar / Encoger : L y A", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
@@ -746,30 +703,30 @@ default:
     gpJeu->affiche(image, "Confirm / Pass text: A", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Move Link: Arrows", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
-        gpJeu->affiche(image, "Run : L hold", 24, ligne); 
+        gpJeu->affiche(image, "Run : R hold", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
         gpJeu->affiche(image, "Use sword: B", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Spin attack: B hold then dropped", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Item selection: START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Item selection: L and START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Use selected object: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Use selected object: X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Pick up items (with the glove): X", 24, ligne); 
+        gpJeu->affiche(image, "Pick up items (with the glove): Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Open the map: L and Y (outside of dungeons)", 24, ligne);
-    else gpJeu->affiche(image, "Open the map: L and Y (in dungeons)", 24, ligne);
+        gpJeu->affiche(image, "Open the map: START (outside of dungeons)", 24, ligne);
+    else gpJeu->affiche(image, "Open the map: START (in dungeons)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "View defeated monsters: L and B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Look around: R and direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Look around: L and direction", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Enlarge / Shrink: L and A", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
@@ -832,22 +789,22 @@ case 2: // French
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Porter sans équiper les gants : X", 24, ligne); 
+        gpJeu->affiche(image, "Porter sans équiper les gants : Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Afficher la carte : L et Y (extérieur ou donjons)", 24, ligne);
-    else gpJeu->affiche(image, "Afficher la carte : L et Y (dans les donjons)", 24, ligne);}
+        gpJeu->affiche(image, "Afficher la carte : START (extérieur ou donjons)", 24, ligne);
+    else gpJeu->affiche(image, "Afficher la carte : START (dans les donjons)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Afficher les monstres vaincus : L+B", 24, ligne); 
+        gpJeu->affiche(image, "Afficher les monstres vaincus : L et B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Regarder autour : R et direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Regarder autour : L et direction", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Agrandir / Rétrécir : L et A", 24, ligne); ligne+=16;
     if (ligne >= 64) 
@@ -863,22 +820,22 @@ case 3: // German
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64)
-    gpJeu->affiche(image, "Gegenstand benutzen: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Gegenstand benutzen: X", 24, ligne); ligne+=16;
     if (ligne >= 64)
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: X", 24, ligne);
+        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: Y", 24, ligne);
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Plan ansehen: L und Y (außen oder im Tempel)", 24, ligne);
-    else gpJeu->affiche(image, "Plan ansehen: L und Y (im Tempel)", 24, ligne);}
+        gpJeu->affiche(image, "Plan ansehen: START (außen oder im Tempel)", 24, ligne);
+    else gpJeu->affiche(image, "Plan ansehen:START (im Tempel)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64)
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "Bisher besiegte Monster: L und B", 24, ligne);
         ligne+=16;}
     if (ligne >= 64)
-    gpJeu->affiche(image, "Sich umsehen: R und Cursortasten", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sich umsehen: L und Cursortasten", 24, ligne); ligne+=16;
     if (ligne >= 64)
     gpJeu->affiche(image, "Vollbild / Fenster: L und A", 24, ligne); ligne+=16;
     if (ligne >= 64)
@@ -894,22 +851,22 @@ case 4: // Italian
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Usa oggetto selezionato: X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "raccogli oggetti (con guanti): X", 24, ligne); 
+        gpJeu->affiche(image, "Raccogli oggetti (con guanti): Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Apri la mappa: L e Y (fuori dai dungeon)", 24, ligne);
-    else gpJeu->affiche(image, "Apri la mappa: L e Y (nei dungeon)", 24, ligne);}
+        gpJeu->affiche(image, "Apri la mappa: START (fuori dai dungeon)", 24, ligne);
+    else gpJeu->affiche(image, "Apri la mappa: START (nei dungeon)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Gurda mostri uccsi: L+B", 24, ligne); 
+        gpJeu->affiche(image, "Gurda mostri uccsi: L e B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Guarda intorno: R e direzione", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Guarda intorno: L e direzione", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Allarga / Riduci: L e A", 24, ligne); ligne+=16;
     if (ligne >= 64) 
@@ -926,22 +883,22 @@ case 5: // Spanish
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Levantar sin equipar los guantes : X", 24, ligne); 
+        gpJeu->affiche(image, "Levantar sin equipar los guantes : Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Ver el mapa : L y Y (exterior o templos)", 24, ligne);
-    else gpJeu->affiche(image, "Ver el mapa : L y Y (en los templos)", 24, ligne);}
+        gpJeu->affiche(image, "Ver el mapa : START (exterior o templos)", 24, ligne);
+    else gpJeu->affiche(image, "Ver el mapa : START (en los templos)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "Ver los monstruos vencidos : L Y B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Mirar alrededor : R y dirección", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Mirar alrededor : L y dirección", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Agrandar / Encoger : L y A", 24, ligne); ligne+=16;
     if (ligne >= 64) 
@@ -957,22 +914,22 @@ default:
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Use selected object: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Use selected object: X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Pick up items (with the glove): X", 24, ligne); 
+        gpJeu->affiche(image, "Pick up items (with the glove): Y", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Open the map: L and Y (outside of dungeons)", 24, ligne);
-    else gpJeu->affiche(image, "Open the map: L and Y (in dungeons)", 24, ligne);}
+        gpJeu->affiche(image, "Open the map: START (outside of dungeons)", 24, ligne);
+    else gpJeu->affiche(image, "Open the map: START (in dungeons)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
         gpJeu->affiche(image, "View defeated monsters: L and B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Look around: L and direction", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Look around: R and direction", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Enlarge / Shrink: L and A", 24, ligne); ligne+=16;
     if (ligne >= 64) 
@@ -1591,6 +1548,54 @@ void Generique::drawOption(SDL_Surface* gpScreen, int ligne, int opt1, int opt2)
     SDL_Rect src;
     SDL_Rect dst;
 	
+switch(getLanguage()) {
+
+case 2: // French
+    gpJeu->affiche(gpScreen, "OPTIONS", 40, 16);
+    gpJeu->affiche(gpScreen, "MUSIQUE", 60, 72);
+    gpJeu->affiche(gpScreen, "SON", 60, 115);
+    gpJeu->affiche(gpScreen, "LANGUE", 60, 158);
+    gpJeu->affiche(gpScreen, "Francaise", 170, 158);
+    gpJeu->affiche(gpScreen, "RETOUR", 63, 200);
+break;
+
+case 3: // German
+    gpJeu->affiche(gpScreen, "OPTIONEN", 42, 16);
+    gpJeu->affiche(gpScreen, "MUSIK", 60, 72);
+    gpJeu->affiche(gpScreen, "TON", 60, 115);
+    gpJeu->affiche(gpScreen, "SPRACHE", 60, 158);
+    gpJeu->affiche(gpScreen, "Deutsche", 170, 158);
+    gpJeu->affiche(gpScreen, "ZURÜCK", 60, 200);
+break;
+
+case 4: // Italian
+    gpJeu->affiche(gpScreen, "OPZIONI", 40, 16);
+    gpJeu->affiche(gpScreen, "MUSICA", 60, 72);
+    gpJeu->affiche(gpScreen, "SUONI", 60, 115);
+    gpJeu->affiche(gpScreen, "LINGUA", 60, 158);
+    gpJeu->affiche(gpScreen, "Italiano", 170, 158);
+    gpJeu->affiche(gpScreen, "INDIETRO", 63-6, 200);
+break;
+
+case 5: // Spanish
+   gpJeu->affiche(gpScreen, "OPCIONES", 40-1, 16);
+    gpJeu->affiche(gpScreen, "MUSICA", 60, 72);
+    gpJeu->affiche(gpScreen, "SONIDOS", 60, 115);
+    gpJeu->affiche(gpScreen, "IDIOMA", 60, 158);
+    gpJeu->affiche(gpScreen, "Espanol", 170, 158);
+    gpJeu->affiche(gpScreen, "ANTERIOR", 63-6, 200);
+break;
+
+default:
+    gpJeu->affiche(gpScreen, "OPTIONS", 40, 16);
+    gpJeu->affiche(gpScreen, "MUSIC", 60, 72);
+    gpJeu->affiche(gpScreen, "SOUNDS", 60, 115);
+    gpJeu->affiche(gpScreen, "LANGUAGE", 60, 158);
+    gpJeu->affiche(gpScreen, "English", 170, 158);
+    gpJeu->affiche(gpScreen, "RETURN", 63, 200);
+break;	
+}
+
 	int languageID = getLanguage();
 	if (languageID<1 || languageID>5) languageID = 1;
     
@@ -1700,7 +1705,7 @@ void Generique::drawBackground(SDL_Surface* gpScreen) {
 
 void Generique::drawFlag(SDL_Surface* gpScreen, int flagID){
     SDL_Rect src; src.x = (flagID-1)*26; src.y = 0;src.h = 16; src.w = 26;
-    SDL_Rect dst; dst.x = 193; dst.y = 158;
+    SDL_Rect dst; dst.x = 136; dst.y = 158;
     SDL_BlitSurface(imageFlags, &src, gpScreen, &dst);
 }
 

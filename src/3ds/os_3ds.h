@@ -67,14 +67,14 @@ void setLanguage(int languageID);
 #define SDLK_DOWN	KEY_DOWN
 
 #define SDLK_CAPSLOCK 0
-#define SDLK_LSHIFT KEY_L
-#define SDLK_LCTRL	KEY_R
+#define SDLK_LSHIFT KEY_R
+#define SDLK_LCTRL	KEY_L
 #define SDLK_z		KEY_B
 #define SDLK_w		0
-#define SDLK_x		KEY_X
-#define SDLK_c		KEY_Y
+#define SDLK_x		KEY_Y
+#define SDLK_c		KEY_X
 #define SDLK_SPACE KEY_A
-#define SDLK_p 		0
+#define SDLK_p 		KEY_START
 #define SDLK_m 		0
 #define SDLK_SEMICOLON 0
 

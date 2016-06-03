@@ -933,9 +933,9 @@ case 4: // Italian
         case 213 : texte = "                   Livello ?:**                  Tempio Segreto"; break;
         case 214 : texte = "                 Ultimo livello:**             Castello di Hyrule"; break;
         
-        case 215 :texte = "                  Gia' stanco?                    ?                 CONTINUA                 ?                   Salva e esci                                Esci senza salvare             "; break;
-        case 216 :texte = "                  Gia' stanco?                                      Continua                     ?               SALVA E ESCI               ?                Esci senza salvare             "; break;
-        case 217 :texte = "                  Gia' stanco?                                      Continua                                     Salva e esci                   ?            ESCI SENZA SALVARE            ?"; break;
+        case 215 :texte = "                  Gia' stanco?                   ?                 CONTINUA                 ?                   Salva e esci                                Esci senza salvare             "; break;
+        case 216 :texte = "                  Gia' stanco?                                     Continua                     ?               SALVA E ESCI               ?                Esci senza salvare             "; break;
+        case 217 :texte = "                  Gia' stanco?                                     Continua                                     Salva e esci                   ?            ESCI SENZA SALVARE            ?"; break;
         
         case 223 : texte = "nell'istante in cui Link tocco' la Triforza, i mostri sparirono e la pace ritorno'.**La Principessa Zelda allora prese una importante decisione: tocco' la Triforza ed espresse il suo desiderio.**La Triforza era sempre stata l'origine dei problemi del regno. Prima o poi un'altra creatura malvaggia l'avrebbe trovata.**Quando la Principessa Zelda tocco' la reliquia, spari' da Hyrule... per sempre.";
             buffer = "Da quel giorno gli abitanti di Hyrule ha vissuto in pace, senza temere nuovi disastri.**Così la leggenda di Zelda, della Triforza e della Landa D'Oro si e' conclusa**La Spada Suprema  si dice riposi al sicuro da qualche parte e che sia l'unico cimelio rimasto delle gesta di Link."; break;
@@ -946,12 +946,12 @@ case 4: // Italian
         
         case 228 : texte = "Il regno di Hyrule e' stato in pace sin da quando Link, l'ultimo cavaliere di Hyrule, ha sconfitto il malefico Ganon e recuperato da lui la preziosa Triforza."; idsuiv = 229; break;
         case 229 : texte = "nessuno sa quale desiderio abbia espresso Link alla Triforza, ma ha avuto l'effetto di riunificare i mondi della luce e dell'oscurita', e di resuscitare i discendenti dei 7 uomini saggi."; idsuiv = 230; break;
-        case 230 : texte = "Link allora consegno' la Triforza e la Spada Supremathen alla Principessa Zelda, e le persone cominciarono a credere che la pace sarebbe durata per sempre.*Ma si sbagliavano..."; idsuiv=231; break;
+        case 230 : texte = "Link allora consegno' la Triforza e la Spada Suprema alla Principessa Zelda, e le persone cominciarono a credere che la pace sarebbe durata per sempre.*Ma si sbagliavano..."; idsuiv=231; break;
         case 231 : texte = "Sfortunatamente, il desiderio di Link ha avuto anche effetti negativi. Anche Ganon e i suoi scagnozzi erano resusciti ed erano pronti all'attacco."; idsuiv=232; break;
-        case 232 : texte = "In qualhe posto nella foresta di Hyrule, Link sta dormendo senza sospettare che Ganon ha già iniziato il suo attacco, quando una"; 
-            buffer="voce familiare gli parlo nel sonno..."; break;
+        case 232 : texte = "In qualche posto nella foresta di Hyrule, Link sta dormendo senza sospettare che Ganon ha gia' iniziato il suo attacco, quando una"; 
+            buffer="voce familiare gli parla nel sonno..."; break;
         case 233 : texte = "Aiutami!*Aiutami!*Sono io! Zelda!*Ti sto parlando telepaticamente."; idsuiv = 234; break;
-        case 234 : texte = "Sono prigioniera nelle segrete del catello!*Ho bisogno del tuo aiuto!*Ganon e' tornato, e sicuramente ha gia' trovato la Triforza..."; idsuiv=235; break;
+        case 234 : texte = "Sono prigioniera nelle segrete del castello!*Ho bisogno del tuo aiuto!*Ganon e' tornato, e sicuramente ha gia' trovato la Triforza..."; idsuiv=235; break;
         case 235 : texte = "Vieni di corsa al castello, Link! Sei la mia unica speranza..."; break;
         case 236 : texte = "SUGGERIMENTO: Premi L e X per consultare il menu di aiuto."; break;
     }

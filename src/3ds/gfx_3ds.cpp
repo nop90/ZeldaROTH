@@ -44,7 +44,7 @@ SDL_Surface* SDL_SetVideoMode(int width, int height, int bpp, int flag)
 	{
 		offset = 0;
 		scalepos = 1.25; 
-		scalewidth = 1.28; //should be 1.25 but setting a slight bigger value avoid tiles positioning defects caused by scaled width approximation
+		scalewidth = 1.25; //1.28; //should be 1.25 but setting a slight bigger value avoid tiles positioning defects caused by scaled width approximation
 	} else {
 		offset = 1;
 		scalepos = 1; 

@@ -133,7 +133,7 @@ int Keyboard::pollKeys(int keys) {
         case 0 :
             gpJoueur = gpJeu->getJoueur();
             
-            if ((keys & SDLK_F1) && tmp == 0) { 
+            if ((keys & KMOD_ALT) && (keys & SDLK_F1) && tmp == 0) { 
                 if (!gpJeu->getStop() && !gpJeu->getMenu()) gpJeu->setMenu(true);
                 else if (gpJeu->getMenu()) gpJeu->setMenu(false);
                 tmp = 1;
@@ -429,8 +429,8 @@ int Keyboard::pollKeys(int keys) {
             
             if (!(keys&SDLK_c) && tmpc) tmpc=0;
             
-            // open monsters screen
-            if ((keys & KMOD_ALT) && (keys&SDLK_c) && gpJoueur->hasObjet(O_CARTE) && 
+            // open map
+            if (!(keys & KMOD_ALT) && (keys&SDLK_p) && gpJoueur->hasObjet(O_CARTE) && 
             (gpJeu->isDehors() || gpJeu->isDonjon())
             && !gpJeu->getStop() && gpJoueur->getVie()>0 && !tmpp) {
                 mode = 12;
@@ -438,9 +438,9 @@ int Keyboard::pollKeys(int keys) {
                 gpCarte->init();
                 tmpp=1;
             }
-            // monsters screen related
-            if (!((keys&SDLK_c)) && tmpp) tmpp=0;
-			//open map
+            // map related
+            if (!((keys&SDLK_p)) && tmpp) tmpp=0;
+			//open monsters screen
             if ((keys & KMOD_ALT) && (keys&SDLK_z) && gpJoueur->hasObjet(O_ENCYCL) 
             && !gpJeu->getStop() && gpJoueur->getVie()>0 && !tmpm) {
                 mode = 13;
@@ -449,7 +449,7 @@ int Keyboard::pollKeys(int keys) {
                 gpEncyclopedie->init();
                 tmpm=1;
             }
-            // map related
+            // monsters screen related
             if (!((keys&SDLK_z)) && tmpm) tmpm=0;
             break;
         case 1 :
@@ -551,9 +551,11 @@ int Keyboard::pollKeys(int keys) {
                     gpJeu->getAudio()->playSound(3);}}
             if ((keys&SDLK_RIGHT) && !tmp) {
                 if (ligneOption == 0) {
-					if (volume==0) gpJeu->getAudio()->playMusic(47);
+				//	int vtemp = volume;
                     volume+=64; if (volume > 64) volume = 64; tmp=1;
-                    gpJeu->getAudio()->setVolume(volume);gpJeu->getAudio()->playSound(3);}
+                    gpJeu->getAudio()->setVolume(volume);gpJeu->getAudio()->playSound(3);
+				//	if (vtemp==0) 
+					gpJeu->getAudio()->playMusic(46);}
                 if (ligneOption == 1) {
                     volson+=64; if (volson > 64) volson = 64; tmp=1;
                     gpJeu->getAudio()->setVolson(volson);gpJeu->getAudio()->playSound(3);}
