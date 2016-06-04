@@ -116,19 +116,22 @@ int Keyboard::pollKeys(int keys) {
             gpJeu->ecrit(215);
         } else if (mode<8 || mode==9 || mode==15 || mode==16 || mode >18) return -1;
     }
+	
     if (keys & KMOD_ALT) {
 
-	if ( (keys &  SDLK_x) && mode == 0) {
-		mode = 17; 
-		gpJeu->setStop(true);
-		gpJeu->getGenerique()->initAide1(); 
-		gpJeu->getAudio()->playSound(1);}
+		if ( (keys &  SDLK_x) && mode == 0) {
+			mode = 17; 
+			gpJeu->setStop(true);
+			gpJeu->getGenerique()->initAide1(); 
+			gpJeu->getAudio()->playSound(1);
+		}
         if (keys & SDLK_F4) return -1;
 		if ((keys & SDLK_RETURN ) && tmpa==0) {
 			toggleFullScreen();
 			tmpa=1;
 		}
     }
+	
     if (!((keys&SDLK_RETURN) && (keys & KMOD_ALT))) tmpa=0; 
 
     switch (mode) {
@@ -443,6 +446,7 @@ int Keyboard::pollKeys(int keys) {
             }
             // map related
             if (!((keys&SDLK_p)) && tmpp) tmpp=0;
+
 			//open monsters screen
             if ((keys & KMOD_ALT) && (keys&SDLK_z) && gpJoueur->hasObjet(O_ENCYCL) 
             && !gpJeu->getStop() && gpJoueur->getVie()>0 && !tmpm) {
@@ -450,6 +454,7 @@ int Keyboard::pollKeys(int keys) {
                 gpJeu->getAudio()->playSound(1);
                 gpEncyclopedie->setPage(0);
                 gpEncyclopedie->init();
+				gpJeu->setStop(true);
                 tmpm=1;
             }
             // monsters screen related
@@ -560,7 +565,7 @@ int Keyboard::pollKeys(int keys) {
                     gpJeu->getAudio()->setVolume(volume);
 					gpJeu->getAudio()->playSound(3);
 					if (vtemp==0) 
-					gpJeu->getAudio()->playMusic(46);}
+						gpJeu->getAudio()->replayMusic();}
                 if (ligneOption == 1) {
                     volson+=64; if (volson > 64) volson = 64; tmp=1;
                     gpJeu->getAudio()->setVolson(volson);gpJeu->getAudio()->playSound(3);}
@@ -775,7 +780,6 @@ int Keyboard::pollKeys(int keys) {
             }
             if ((keys&SDLK_LEFT) && !tmp) {
                 mode = 17; 
-				gpJeu->setStop(true);
 				gpJeu->getGenerique()->initAide1();
                 gpJeu->getAudio()->playSound(3); tmp=1;}
             

@@ -121,8 +121,6 @@ void Audio::playMusic(int id) {
                 FMUSIC_PlaySong(music);
                 specialId = 0;
             }
-        } else {
-            FMUSIC_PlaySong(music);
 		}
     }
 }
