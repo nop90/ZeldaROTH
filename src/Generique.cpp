@@ -553,10 +553,10 @@ case 2: // French
         ligne+=16;}
     gpJeu->affiche(image, "Menu de sélection d'objet : L + START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Y", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Porter sans équiper les gants : Y", 24, ligne); 
+        gpJeu->affiche(image, "Porter sans équiper les gants : X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -593,10 +593,10 @@ case 3: // German
         ligne+=16;}
     gpJeu->affiche(image, "Gegenstand wählen: L und START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Gegenstand benutzen: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Gegenstand benutzen: Y", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: Y", 24, ligne);
+        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: X", 24, ligne);
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -632,10 +632,10 @@ case 4: // Italian
         ligne+=16;}
     gpJeu->affiche(image, "Selezione oggetto: L e START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Usa oggetto selezionato: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "raccogli oggetti (con guanti): Y", 24, ligne); 
+        gpJeu->affiche(image, "raccogli oggetti (con guanti): X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -711,10 +711,10 @@ default:
         ligne+=16;}
     gpJeu->affiche(image, "Item selection: L and START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Use selected object: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Use selected item: Y", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Pick up items (with the glove): Y", 24, ligne); 
+        gpJeu->affiche(image, "Pick up items (with the glove): X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -789,10 +789,10 @@ case 2: // French
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Y", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Porter sans équiper les gants : Y", 24, ligne); 
+        gpJeu->affiche(image, "Porter sans équiper les gants : X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
@@ -820,10 +820,10 @@ case 3: // German
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64)
-    gpJeu->affiche(image, "Gegenstand benutzen: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Gegenstand benutzen: Y", 24, ligne); ligne+=16;
     if (ligne >= 64)
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: Y", 24, ligne);
+        gpJeu->affiche(image, "Tragen, ohne ausgewählten Handschuh: X", 24, ligne);
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
@@ -851,10 +851,10 @@ case 4: // Italian
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Usa oggetto selezionato: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Raccogli oggetti (con guanti): Y", 24, ligne); 
+        gpJeu->affiche(image, "Raccogli oggetti (con guanti): X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
@@ -883,10 +883,10 @@ case 5: // Spanish
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Y", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Levantar sin equipar los guantes : Y", 24, ligne); 
+        gpJeu->affiche(image, "Levantar sin equipar los guantes : X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
@@ -914,10 +914,10 @@ default:
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Use selected object: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Use selected item: Y", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Pick up items (with the glove): Y", 24, ligne); 
+        gpJeu->affiche(image, "Pick up items (with the glove): X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))

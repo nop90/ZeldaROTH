@@ -48,6 +48,7 @@ class Texte {
         bool cadre; //si on doit dessiner un cadre
         std::string texte;
         std::string buffer;
+        std::string buffer2;
         Uint32 lastAnimTime;
         SDL_Surface* imageFont;
         SDL_Surface* imageCoeur;
