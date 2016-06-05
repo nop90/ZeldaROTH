@@ -6,7 +6,7 @@
 
     Please send bugreports with examples or suggestions to www.zeldaroth.fr
 
-*/
+*/ 
 
 #include "os_3ds.h"
 
