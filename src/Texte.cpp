@@ -855,7 +855,7 @@ case 4: // Italian
             else idsuiv=108; break;
         case 162 : texte = "Una pozione verde per 40 rupie. Sei interessato?*              sì               NO ?"; break;
         case 163 : texte = "Torna quando avrai una bottiglia vuota e ti venderò una pozione verde che ripristina il tuo livello di magia."; break;
-        case 164 : texte = "Torna più tardi. Sono al completo!"; break;
+        case 164 : texte = "Torna più tardi. Ho troppi lavori da finire!"; break;
         case 165 : texte = "Posso fare qualcosa per te?";
             if (gpJeu->getJoueur()->getEpee()==1) {id=166; chercheText();break;}
             if (gpJeu->getJoueur()->hasObjet(O_GANTS)==1 && gpJeu->getJoueur()->getObjet()==8) {
@@ -1836,7 +1836,7 @@ void Texte::afficheLettre(SDL_Surface* gpScreen, char c, int vx, int vy) {
     // û
     if(val=='û') {src.x=84;src.y=103;}
     // ù
-    if(val==-'ù') {src.x=148;src.y=151;}
+    if(val=='ù') {src.x=148;src.y=151;}
     // ü
     if(val=='ü') {src.x=116;src.y=135;}
     // ö
