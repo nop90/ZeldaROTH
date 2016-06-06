@@ -6,7 +6,7 @@
 
     Please send bugreports with examples or suggestions to www.zeldaroth.fr
 
-*/ 
+*/
 
 #include "Generique.h"
 #include "Jeu.h"
@@ -82,10 +82,6 @@ void Generique::initLogo() {
 
 void Generique::initTitre() {
     SDL_Rect dst;
-//    if (imageTitre) SDL_FreeSurface(imageTitre);
-//    SDL_Surface* imageTitre = IMG_Load("romfs:/images/logos/fond.png");
-//    dst.x = 0; dst.y = 0; SDL_BlitSurface(fond, NULL, image, &dst);
-//    SDL_FreeSurface(fond);
     SDL_Surface* logo = IMG_Load("romfs:/images/logos/titre.png");
     SDL_SetColorKey(logo,SDL_SRCCOLORKEY,SDL_MapRGB(logo->format,0,0,255));
     //logo = SDL_DisplayFormat(logo); 
@@ -635,7 +631,7 @@ case 4: // Italian
     gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "raccogli oggetti (con guanti): X", 24, ligne); 
+        gpJeu->affiche(image, "Raccogli oggetti (con guanti): X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -644,7 +640,7 @@ case 4: // Italian
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Gurda mostri uccsi: L e B", 24, ligne); 
+        gpJeu->affiche(image, "Gurda mostri uccisi: L e B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Guarda intorno: L e direzione", 24, ligne); ligne+=16;
@@ -672,10 +668,10 @@ case 5: // Spanish
         ligne+=16;}
     gpJeu->affiche(image, "Menu de selección del objeto : L y START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Y", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Levantar sin equipar los guantes : Y", 24, ligne); 
+        gpJeu->affiche(image, "Levantar sin equipar los guantes : X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -863,7 +859,7 @@ case 4: // Italian
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Gurda mostri uccsi: L e B", 24, ligne); 
+        gpJeu->affiche(image, "Gurda mostri uccisi: L e B", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
     gpJeu->affiche(image, "Guarda intorno: L e direzione", 24, ligne); ligne+=16;

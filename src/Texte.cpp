@@ -6,7 +6,7 @@
 
     Please send bugreports with examples or suggestions to www.zeldaroth.fr
 
-*/ 
+*/
 
 #include "os_3ds.h"
 
@@ -338,7 +338,7 @@ case 2: // French
         case 233 : texte = "A l'aide!*A l'aide!*C'est moi! C'est Zelda!*Je te parle par télépathie."; idsuiv = 234; break;
         case 234 : texte = "Je suis retenue prisonnière dans le donjon du château! J'ai besoin de ton aide!*Ganon est de retour, et il a certainement dû trouver la Triforce à l'heure qu'il est..."; idsuiv=235; break;
         case 235 : texte = "Viens vite au château Link, tu es mon seul espoir..."; break;
-        case 236 : texte = "AIDE : Appuie sur L et X pour consulter l'aide."; break;
+        case 236 : texte = "AIDE : Appuie sur L et Y pour consulter l'aide."; break;
     }
 
 	break; //French
@@ -945,7 +945,7 @@ case 4: // Italian
         case 228 : texte = "Il regno di Hyrule è stato in pace sin da quando Link, l'ultimo cavaliere di Hyrule, ha sconfitto il malefico Ganon e recuperato la preziosa Triforza."; idsuiv = 229; break;
         case 229 : texte = "nessuno sa quale desiderio abbia espresso Link alla Triforza, ma ha avuto l'effetto di riunificare i mondi della luce e dell'oscurità, e di resuscitare i discendenti dei 7 saggi."; idsuiv = 230; break;
         case 230 : texte = "Link in seguito affidò la Triforza e la Spada Suprema alla Principessa Zelda, e le persone cominciarono a credere che la pace sarebbe durata per sempre.*Ma si sbagliavano..."; idsuiv=231; break;
-        case 231 : texte = "Sfortunatamente infatti il desiderio espresso da Link ebbe anche effetti negativi. Anche Ganon e i suoi scagnozzi erano resuscitati ed furono presto di nuovo pronti all'attacco."; idsuiv=232; break;
+        case 231 : texte = "Sfortunatamente infatti il desiderio espresso da Link ebbe anche effetti negativi. Anche Ganon e i suoi scagnozzi erano resuscitati e furono presto di nuovo pronti all'attacco."; idsuiv=232; break;
         case 232 : texte = "In qualche posto nella foresta di Hyrule, Link sta dormendo senza sospettare che Ganon ha già iniziato il suo attacco, quando una voce familiare gli parla nel sonno..."; break;
         case 233 : texte = "Aiutami!*Aiutami!*Sono io! Zelda!*Ti sto parlando telepaticamente."; idsuiv = 234; break;
         case 234 : texte = "Sono prigioniera nelle segrete del castello!*Ho bisogno del tuo aiuto!*Ganon è tornato, e sicuramente ha già trovato la Triforza..."; idsuiv=235; break;
@@ -1254,7 +1254,7 @@ case 5: // Spanish
         case 233 : texte = "Ayuda!*Ayuda!*Soy yo! Zelda!*Te hablo por telepatía."; idsuiv = 234; break;
         case 234 : texte = "Estoy prisionera en el torreón del castillo! Necesito tu ayuda!*Ganon esta de vuelta, y sin duda ya ha encontrado la Trifuerza a estas horas..."; idsuiv=235; break;
         case 235 : texte = "Corre al castillo Link, eres mi única esperanza..."; break;
-        case 236 : texte = "AYUDA : Pulsa L y X para consultar la ayuda."; break;
+        case 236 : texte = "AYUDA : Pulsa L y Y para consultar la ayuda."; break;
     }
 
 break; // Spanish
@@ -1559,7 +1559,7 @@ default:
         case 233 : texte = "Help me!*Help me!*It's me! Zelda!*I'm talking to you via telepathy."; idsuiv = 234; break;
         case 234 : texte = "I am a prisoner in the dungeon of the castle!*I need your help!*Ganon is back, and he surely has already found the Triforce..."; idsuiv=235; break;
         case 235 : texte = "Come, quickly, to the castle, Link! You are my only hope..."; break;
-        case 236 : texte = "HELP: Press L and X to view the help menu."; break;
+        case 236 : texte = "HELP: Press L and Y to view the help menu."; break;
     }
 	break; // default language : English
 }
@@ -1788,6 +1788,13 @@ void Texte::afficheLettre(SDL_Surface* gpScreen, char c, int vx, int vy) {
     // Ü
     if(val=='Ü') {src.x=6+16*2; src.y=167;}
     
+
+    // it
+    // ì
+    if(val=='ì') {src.x=164;src.y=36;}
+    // ò
+    if(val=='ò') {src.x=164;src.y=119;}
+ 
 
     // /
     if(val==47) {src.x=52;src.y=151;}
