@@ -660,7 +660,7 @@ case 4: // Italian
             os << tmp;
             texte = "Hai trovato una parte di cuore!!!";
             if (tmp<4) buffer = "te ne servono "+os.str()+" ancora per un nuvo cuore.";
-            else buffer = "Il tuo numero di cuori e' aumentato!";
+            else buffer = "Il tuo numero di cuori è aumentato!";
             break;
         case 11 : texte = "N: Casa di Link*O: Terra di Hyrule*E: Tempio della foresta"; break;
         case 12 : texte = "Tempio della montagna**Non per cardiopatici, paurosi o deboli di cuore."; break;
@@ -710,7 +710,7 @@ case 4: // Italian
         case 51 : texte = "Villagio Gerudo"; break;
         case 52 : texte = "Ti sei perso nel deserto?*Tu sei qui:*                        X"; break;
         case 54 : texte = "S: Al Castello di Hyrule"; break;
-        case 55 : texte = "Tempio del deserto**Vieni a provare le nostre terme.*(L'acqua non  è' potabile)"; break;
+        case 55 : texte = "Tempio del deserto**Vieni a provare le nostre terme.*(L'acqua non  è potabile)"; break;
         case 56 : texte = "Tempio della foresta**Salva gli alberi, mangia un castoro!"; break;
         case 57 : texte = "Tempio del Lago**Cuffia da bagno obbligatoria"; break;
         case 58 : texte = "Tempio di Ghiaccio**Il personale vi ricorda che un tempio non è una pista di pattinagio."; break;
@@ -843,7 +843,7 @@ case 4: // Italian
         case 155 : texte = "Scegli un baule."; break;
         case 156 : texte = "Non ho più premi da mettere in palio, mi dispiace."; break;
         case 157 : texte = "Hai perso! Questo baule è vuoto. Prova ancora!"; break;
-        case 158 : texte = "Salve! Se cerchi il fabbro, vive un po' piu' avanti."; break;
+        case 158 : texte = "Salve! Se cerchi il fabbro, vive un po' più avanti."; break;
         case 159 : texte = "Salve Link, io sono il capo del villaggio.*Dovresti andare ad incontrare il fabbro e mostrargli quale equipaggiamento vuoi che migliori.";
             buffer = "Sono a conoscenza della tua missione, quindi lo ho già avvisato.*Sarà tutto gratis per te."; break;
         case 160 : texte = "Non hai bisogno di bere questa pozione ora."; break;
@@ -890,7 +890,7 @@ case 4: // Italian
         case 184 : texte = "Così hai trovato la spada?*Ma... non pensare che ti appartenga.";
             buffer = "La Spada Suprema è uno dei più preziosi patrimoni di Hyrule insieme alla Triforza. Dovrai riportarla al suo santuario una volta completata la tua missione."; break;
         case 186 : texte = "Tutti gli abitanti del villaggio sono spiriti che hanno risposto al richiamo della Principessa Zelda."; break;
-        case 187 : texte = "Quando riportasti la pace in Hyrule e riunisti il Mondo della Luce con la Landa Dorata, Zelda in segreto chiese agli degli spititi volontari di creare questo villaggio per bloccare";
+        case 187 : texte = "Quando riportasti la pace in Hyrule e riunisti il Mondo della Luce con la Landa Dorata, Zelda in segreto chiese a degli spititi volontari di creare questo villaggio per bloccare";
             buffer = "l'accesso ad un oggetto di altissimo valore."; break;
         
         case 189 : texte = "Benvenuto Link!*Lascia che ti spieghi cosa sto facendo qui."; idsuiv=190; break;
@@ -935,7 +935,7 @@ case 4: // Italian
         case 216 :texte = "                  Già stanco?                                      Continua                     ?               SALVA E ESCI               ?                Esci senza salvare             "; break;
         case 217 :texte = "                  Già stanco?                                      Continua                                     Salva e esci                   ?            ESCI SENZA SALVARE            ?"; break;
         
-        case 223 : texte = "Nell'istante in cui Link toccò la Triforza, i mostri sparirono e la pace ritorno'.**La Principessa Zelda allora prese una importante decisione: toccò la Triforza ed espresse il suo desiderio.**La Triforza era sempre stata l'origine dei problemi del regno. Prima o poi un'altra creatura malvaggia l'avrebbe trovata.**Quando la Principessa Zelda toccò la reliquia, questa sparì da Hyrule... per sempre.";
+        case 223 : texte = "Nell'istante in cui Link toccò la Triforza, i mostri sparirono e la pace ritornò.**La Principessa Zelda allora prese una importante decisione: toccò la Triforza ed espresse il suo desiderio.**La Triforza era sempre stata l'origine dei problemi del regno. Prima o poi un'altra creatura malvaggia l'avrebbe trovata.**Quando la Principessa Zelda toccò la reliquia, questa sparì da Hyrule... per sempre.";
             buffer = "Da quel giorno gli abitanti di Hyrule vissero in pace, senza temere nuovi disastri.**Così la leggenda di Zelda, della Triforza e della Landa D'Oro si è conclusa**La Spada Suprema si dice riposi al sicuro da qualche parte e che sia l'unico cimelio rimasto delle gesta di Link."; break;
         case 224 : texte = "Congratulazioni per avermi trovato, Link. Come ricompensa ti dono il pendente di Farore. Aumenta la tua difesa di un punto."; break;
         case 225 : texte = "Vuoi salvare la partita?     **                    ? SI' ?*                      no  "; break;
