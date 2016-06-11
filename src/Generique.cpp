@@ -620,7 +620,7 @@ case 4: // Italian
     gpJeu->affiche(image, "Conferma / Chiudi testo: A", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Muovere Link: pad direzionale", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
-        gpJeu->affiche(image, "Run : R hold", 24, ligne); 
+        gpJeu->affiche(image, "Correre: R e pad direzionale", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
         gpJeu->affiche(image, "Usa la spada: B", 24, ligne); ligne+=16;

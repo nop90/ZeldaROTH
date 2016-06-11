@@ -20,7 +20,7 @@
 #include "3ds/sound_3ds.h"
 
 Audio::Audio() : volume(0), musiqueId(0), specialId(0) {
-    SOUND = FSOUND_Init(44100, 16, 0);
+    SOUND = FSOUND_Init(48000, 16, 0);
     music = NULL;
     
     if (SOUND) {

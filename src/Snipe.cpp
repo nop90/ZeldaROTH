@@ -6,7 +6,7 @@
 
     Please send bugreports with examples or suggestions to www.zeldaroth.fr
 
-*/ 
+*/
 
 #include "Snipe.h"
 #include "Projectile.h"
@@ -74,14 +74,13 @@ rebond(false), element(FEU) {
 }
 
 Snipe::~Snipe() {
-    SDL_FreeSurface(image);
+    if(image) SDL_FreeSurface(image);
 	if(suivant)	{
 		Snipe* temp;
 		temp = (Snipe*)suivant;
 		suivant=NULL;
 		delete temp;
 	}
-
 }
 
 void Snipe::draw(SDL_Surface* gpScreen) {
@@ -107,9 +106,11 @@ void Snipe::draw(SDL_Surface* gpScreen) {
         }
     }
 
-
-
-    if (suivant != NULL) if (((Snipe*)suivant)->vie == 0) enleve(suivant);
+    if (suivant != NULL) if (((Snipe*)suivant)->vie == 0){
+		if(((Snipe*)suivant)->image) SDL_FreeSurface(((Snipe*)suivant)->image);
+		((Snipe*)suivant)->image = 0;
+		enleve(suivant);
+	}
     if (suivant != NULL) ((Snipe*)suivant)->draw(gpScreen);
 }
 
